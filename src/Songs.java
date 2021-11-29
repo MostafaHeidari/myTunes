@@ -1,11 +1,11 @@
 public class Songs {
 
 
-    private final String artist;
-    private String title;
-    private String Artist;
-    private String categori;
-    private int time;
+    public final String artist;
+    public String title;
+    public String Artist;
+    public String categori;
+    public int time;
 
     public Songs(String title, String Artist, String artist, String categori, int time)
     {
@@ -14,6 +14,10 @@ public class Songs {
         this.Artist = this.artist;
         this.categori= categori;
         this.time= time;
+    }
+
+    public Songs(String title, Object artist, Object categori, Object time, String artist1) {
+        this.artist = artist1;
     }
 
     public String getTitle()
