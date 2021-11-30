@@ -6,14 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.controller.NewPlaylist">
+<AnchorPane prefHeight="276.0" prefWidth="490.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.controller.NewPlaylist">
    <children>
       <Label layoutX="85.0" layoutY="95.0" text="Name" />
       <TextField layoutX="135.0" layoutY="91.0" prefHeight="26.0" prefWidth="258.0" />
-      <Button layoutX="248.0" layoutY="175.0" mnemonicParsing="false" text="Cancel" />
-      <Button layoutX="328.0" layoutY="175.0" mnemonicParsing="false" text="Save" />
-      <Label layoutX="183.0" layoutY="14.0" prefHeight="48.0" prefWidth="231.0" text="New/Edit Playlist">
+      <Button layoutX="329.0" layoutY="134.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="Cancel" />
+      <Button layoutX="247.0" layoutY="134.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="Save" />
+      <Label layoutX="174.0" layoutY="26.0" prefHeight="48.0" prefWidth="141.0" text="New/Edit Playlist">
          <font>
             <Font size="18.0" />
          </font>
