@@ -1,3 +1,5 @@
+import MyTunes.controller.Songs;
+
 public class SongModel<MRSLogicFacade> {
     private MRSLogicFacade logiclayer;
 
