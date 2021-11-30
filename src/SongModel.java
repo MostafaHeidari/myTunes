@@ -1,10 +1,9 @@
 public class SongModel<MRSLogicFacade> {
     private MRSLogicFacade logiclayer;
 
-/*
- /*   public Songs createMovie(String title, String artist, String categori, int time) {
+  public Songs createSong(String title, String artist, String categori, int time) {
         SongModel logiclayer = null;
-        Songs song = logiclayer.createMovie(title,artist,categori,time);
+        Songs song = logiclayer.createSong(title,artist,categori,time);
         Songs.add(song);
 
         return song;
@@ -15,5 +14,4 @@ public class SongModel<MRSLogicFacade> {
         logiclayer.deleteSong(song);
         Songs.remove(song);
     }
-*/
 }
