@@ -33,7 +33,6 @@ public class Songs {
     public void setArtist(String artist) {
         artist = artist;
     }
-
     public String getCategory() {
         return category;
     }
