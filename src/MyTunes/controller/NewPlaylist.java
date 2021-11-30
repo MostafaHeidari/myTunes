@@ -1,4 +1,4 @@
-package MyTunes.gui.view;
+package MyTunes.controller;
 
 public class NewPlaylist {
 }
