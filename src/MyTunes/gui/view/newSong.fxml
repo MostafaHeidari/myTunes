@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="MyTunes.gui.view.Songs"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="384.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.view.Songs">
+   <children>
+      <Label layoutX="59.0" layoutY="74.0" prefHeight="18.0" prefWidth="48.0" text="Titel" />
+      <Label layoutX="59.0" layoutY="119.0" text="Artist" />
+      <Label layoutX="59.0" layoutY="152.0" text="Category" />
+      <Label layoutX="59.0" layoutY="183.0" text="Time" />
+      <Label layoutX="58.0" layoutY="226.0" text="File" />
+      <TextField layoutX="107.0" layoutY="71.0" prefHeight="26.0" prefWidth="258.0" />
+      <TextField layoutX="117.0" layoutY="115.0" prefHeight="26.0" prefWidth="219.0" />
+      <TextField layoutX="95.0" layoutY="222.0" prefHeight="26.0" prefWidth="258.0" />
+      <TextField layoutX="127.0" layoutY="148.0" />
+      <TextField layoutX="117.0" layoutY="179.0" prefHeight="26.0" prefWidth="66.0" />
+      <Button layoutX="300.0" layoutY="148.0" mnemonicParsing="false" text="More..." />
+      <Button layoutX="380.0" layoutY="222.0" mnemonicParsing="false" text="Choose" />
+      <Button layoutX="410.0" layoutY="333.0" mnemonicParsing="false" text="Cancel" />
+      <Button layoutX="486.0" layoutY="333.0" mnemonicParsing="false" text="Save" />
+      <Label layoutX="150.0" layoutY="14.0" prefHeight="18.0" prefWidth="227.0" text="New/ Edit Song" />
+   </children>
 </AnchorPane>
