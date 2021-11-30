@@ -1,4 +1,4 @@
-package MyTunes.gui.controller;
+package MyTunes.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;

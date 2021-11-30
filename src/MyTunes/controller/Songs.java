@@ -1,3 +1,5 @@
+package MyTunes.controller;
+
 public class Songs {
 
     public String artist;

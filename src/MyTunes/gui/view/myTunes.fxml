@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.controller.MyTunesController">
    <children>
       <TableView layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
@@ -26,7 +26,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="244.0" layoutY="104.0" prefHeight="22.0" prefWidth="124.0" style="-fx-background-color: #C5EDFF;" text="Songs on Playlists" textFill="#394748" AnchorPane.topAnchor="104.0">
+      <Label alignment="CENTER" layoutX="244.0" layoutY="104.0" prefHeight="22.0" prefWidth="124.0" style="-fx-background-color: #C5EDFF;" text="MyTunes.controller.Songs on Playlists" textFill="#394748" AnchorPane.topAnchor="104.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -39,7 +39,7 @@
             <TableColumn fx:id="songDurationCol" prefWidth="86.39999999999998" text="Duration" />
         </columns>
       </TableView>
-      <Label alignment="BASELINE_LEFT" layoutX="455.0" layoutY="104.0" prefHeight="22.0" prefWidth="298.0" style="-fx-background-color: #C5EDFF;" text=" Songs" textFill="#394748">
+      <Label alignment="BASELINE_LEFT" layoutX="455.0" layoutY="104.0" prefHeight="22.0" prefWidth="298.0" style="-fx-background-color: #C5EDFF;" text=" MyTunes.controller.Songs" textFill="#394748">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

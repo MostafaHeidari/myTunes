@@ -2,18 +2,18 @@ public class SongModel<MRSLogicFacade> {
     private MRSLogicFacade logiclayer;
 
 /*
- /*   public Songs createMovie(String title, String artist, String categori, int time) {
+ /*   public MyTunes.controller.Songs createMovie(String title, String artist, String categori, int time) {
         SongModel logiclayer = null;
-        Songs song = logiclayer.createMovie(title,artist,categori,time);
-        Songs.add(song);
+        MyTunes.controller.Songs song = logiclayer.createMovie(title,artist,categori,time);
+        MyTunes.controller.Songs.add(song);
 
         return song;
     }
-    public void deleteSong(Songs song)
+    public void deleteSong(MyTunes.controller.Songs song)
     {
         SongModel logiclayer = null;
         logiclayer.deleteSong(song);
-        Songs.remove(song);
+        MyTunes.controller.Songs.remove(song);
     }
 */
 }
