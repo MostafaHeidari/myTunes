@@ -7,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class main extends Application {
-private static int bredde = 700;
-private static int højde = 400;
+private static int bredde = 800;
+private static int højde = 650;
 
 
     @Override
