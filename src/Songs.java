@@ -1,22 +1,19 @@
 public class Songs {
 
-
-    public final String artist;
+    public String artist;
     public String title;
-    public String Artist;
-    public String categori;
+    public String category;
     public int time;
 
-    public Songs(String title, String Artist, String artist, String categori, int time)
+    public Songs(String title, String artist, String category, int time)
     {
-        this.title = title;
         this.artist = artist;
-        this.Artist = this.artist;
-        this.categori= categori;
+        this.title = title;
+        this.category = category;
         this.time= time;
     }
 
-    public Songs(String title, Object artist, Object categori, Object time, String artist1) {
+    public Songs(String title, Object artist, Object category, Object time, String artist1) {
         this.artist = artist1;
     }
 
@@ -34,15 +31,15 @@ public class Songs {
     }
 
     public void setArtist(String artist) {
-        Artist = artist;
+        artist = artist;
     }
 
-    public String getCategori() {
-        return categori;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategori(String categori) {
-        this.categori = categori;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getTime() {
