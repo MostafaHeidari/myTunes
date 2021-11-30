@@ -1,17 +1,15 @@
 public class Songs {
 
 
-    public final String artist;
+    public String artist;
     public String title;
-    public String Artist;
     public String categori;
     public int time;
 
-    public Songs(String title, String Artist, String artist, String categori, int time)
+    public Songs(String title, String Artist, String categori, int time)
     {
         this.title = title;
-        this.artist = artist;
-        this.Artist = this.artist;
+        this.artist = this.artist;
         this.categori= categori;
         this.time= time;
     }
@@ -34,7 +32,7 @@ public class Songs {
     }
 
     public void setArtist(String artist) {
-        Artist = artist;
+        artist = artist;
     }
 
     public String getCategori() {
