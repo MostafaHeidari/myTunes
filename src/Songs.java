@@ -20,6 +20,12 @@ public class Songs {
         this.artist = artist1;
     }
 
+    public static void add(Songs song) {
+    }
+
+    public static void remove(Songs song) {
+    }
+
     public String getTitle()
     {
         return title;
