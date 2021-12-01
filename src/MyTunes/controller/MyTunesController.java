@@ -53,10 +53,7 @@ public class MyTunesController implements Initializable {
     }
 
 
-    public void opensNewSong(ActionEvent AddSong)
-    {
 
-    }
 
     public void AddSong(ActionEvent actionEvent) {
         Button addSong =new Button();
