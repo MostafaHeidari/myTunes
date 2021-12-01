@@ -39,4 +39,13 @@ public class MyTunesController implements Initializable {
 
     public void handleDeleteSongOnPL(ActionEvent actionEvent) {
     }
+
+
+    public Button getNewSong() {
+        return newSong;
+    }
+
+    public void setNewSong(Button newSong) {
+        this.newSong = newSong;
+    }
 }
