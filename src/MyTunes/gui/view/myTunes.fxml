@@ -59,7 +59,7 @@
             <Image url="@img/Very-Basic-Search-icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="musicRewind" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleMusicRewind" style="-fx-background-color: #E9FAFB;" AnchorPane.topAnchor="33.0">
+      <Button layoutX="60.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleMusicRewind" style="-fx-background-color: #E9FAFB;" AnchorPane.topAnchor="33.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
