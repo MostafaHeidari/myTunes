@@ -1,4 +1,6 @@
-import MyTunes.controller.Songs;
+package MyTunes.gui.model;
+
+import MyTunes.be.Songs;
 
 public class SongModel<MRSLogicFacade> {
     private MRSLogicFacade logiclayer;

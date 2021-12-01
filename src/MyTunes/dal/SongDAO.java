@@ -1,11 +1,14 @@
-import MyTunes.controller.Songs;
+package MyTunes.dal;
+
+import MyTunes.be.Songs;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+//Denne DAO-klasse kan udføre CRUD-operationer på database sang tabellen.
 
-public class SongsDAO< AllSongs> {
+public class SongDAO< AllSongs> {
 
     private Object AllSongs;
     private Object Artist;

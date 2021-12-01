@@ -1,4 +1,4 @@
-package MyTunes.controller;
+package MyTunes.gui.controller;
 
 import javafx.fxml.Initializable;
 
