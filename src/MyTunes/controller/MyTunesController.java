@@ -17,4 +17,9 @@ public class MyTunesController implements Initializable {
     }
 
 
+    public void handleMoveSongToPL(ActionEvent actionEvent) {
+    }
+
+    public void handleDeleteSongOnPL(ActionEvent actionEvent) {
+    }
 }
