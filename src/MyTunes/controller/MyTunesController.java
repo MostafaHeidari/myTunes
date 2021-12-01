@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MyTunesController<cce6ae150ae89a16b00290dbd9bd34f2f2e8aa2> implements Initializable {
+public class MyTunesController implements Initializable {
 
 
     public Button newSong;
