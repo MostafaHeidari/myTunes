@@ -10,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,6 +54,7 @@ public class MyTunesController implements Initializable {
 
     public void opensNewSong(ActionEvent AddSong)
     {
-
+        JButton addSong = new JButton();
+        
     }
 }
