@@ -48,4 +48,6 @@ public class MyTunesController implements Initializable {
     public void setNewSong(Button newSong) {
         this.newSong = newSong;
     }
+
+
 }
