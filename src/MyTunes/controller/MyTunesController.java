@@ -1,6 +1,7 @@
 package MyTunes.controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
@@ -54,7 +55,17 @@ public class MyTunesController implements Initializable {
 
     public void opensNewSong(ActionEvent AddSong)
     {
-        JButton addSong = new JButton();
-        
+
+    }
+
+    public void AddSong(ActionEvent actionEvent) {
+        Button addSong =new Button();
+        addSong.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent e)
+            {
+                Button []AddSong = new Button[0];
+            }
+        });
     }
 }
