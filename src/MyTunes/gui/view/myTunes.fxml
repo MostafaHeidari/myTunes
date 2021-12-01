@@ -32,7 +32,7 @@
             <Font name="System Bold" size="12.0" />
          </font></Label>
       <Button layoutX="386.0" layoutY="138.0" mnemonicParsing="false" onAction="#handleMoveSongToPL" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #C5EDFF;" text="⬅" />
-      <TableView layoutX="455.0" layoutY="138.0" prefHeight="342.0" prefWidth="298.0">
+      <TableView fx:id="tableOfSongs" layoutX="455.0" layoutY="138.0" prefHeight="342.0" prefWidth="298.0">
         <columns>
           <TableColumn fx:id="songTitleCol" prefWidth="67.20001220703125" text="Title" />
           <TableColumn fx:id="songArtistCol" prefWidth="66.4000244140625" text="Artist" />
