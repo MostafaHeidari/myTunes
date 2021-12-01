@@ -37,7 +37,7 @@
           <TableColumn fx:id="songTitleCol" prefWidth="67.20001220703125" text="Title" />
           <TableColumn fx:id="songArtistCol" prefWidth="66.4000244140625" text="Artist" />
             <TableColumn fx:id="songCatCol" prefWidth="75.20001220703125" text="Category" />
-            <TableColumn fx:id="songDurationCol" prefWidth="86.39999999999998" text="Duration" />
+            <TableColumn fx:id="songDurationCol" prefWidth="86.39999999999998" text="Time" />
         </columns>
       </TableView>
       <Label alignment="BASELINE_LEFT" layoutX="455.0" layoutY="104.0" prefHeight="22.0" prefWidth="298.0" style="-fx-background-color: #C5EDFF;" text="Songs" textFill="#394748">
