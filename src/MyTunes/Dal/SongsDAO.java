@@ -1,4 +1,6 @@
-import MyTunes.controller.Songs;
+package MyTunes.Dal;
+
+import MyTunes.be.Songs;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -13,7 +13,7 @@ private static int højde = 650;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("gui/view/myTunes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/MyTunes/gui/view/myTunes.fxml"));
         primaryStage.setTitle("MyTunes");
         primaryStage.setScene(new Scene(root, bredde, højde));
         primaryStage.show();
