@@ -24,6 +24,8 @@ public class Songs {
 
     }
 
+
+
     public String getLocation() {
         return Location;
     }
@@ -45,7 +47,7 @@ public class Songs {
     public static void add(Songs song) {
     }
 
-    public String getTitle()
+    public  String getTitle()
     {
         return title;
     }
