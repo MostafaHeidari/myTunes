@@ -1,21 +1,14 @@
 package MyTunes.gui.model;
 
 import MyTunes.be.Songs;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class SongModel<MRSLogicFacade> {
-    private MRSLogicFacade logiclayer;
+public class SongModel{
 
-  public Songs createSong(String title, String artist, String categori, int time) {
-        SongModel logiclayer = null;
-        Songs song = logiclayer.createSong(title,artist,categori,time);
-        Songs.add(song);
+    private ObservableList<Songs> allSongs = FXCollections.observableArrayList();
+    private final SongManager songManager;
 
-        return song;
-    }
-    public void deleteSong(Songs song)
-    {
-        SongModel logiclayer = null;
-        logiclayer.deleteSong(song);
-        Songs.remove(song);
-    }
+
+
 }
