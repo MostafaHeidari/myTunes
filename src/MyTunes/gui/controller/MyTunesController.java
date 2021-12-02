@@ -1,17 +1,21 @@
-package MyTunes.controller;
+package MyTunes.gui.controller;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 
-import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -87,8 +91,17 @@ public class MyTunesController implements Initializable {
     public void handleCloseApp(ActionEvent actionEvent) {
     }
 
-    public void handleNewSong(ActionEvent actionEvent) {
+    public void handleNewSong(ActionEvent actionEvent) throws IOException {
+        Parent root1;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyTunes/gui/view/newSong.fxml"));
+        root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.setTitle("Songs");
+        stage.centerOnScreen();
+        stage.show();
     }
+
 
     public void handleDeleteSong(ActionEvent actionEvent) {
     }
@@ -101,4 +114,5 @@ public class MyTunesController implements Initializable {
 
     public void handleMusicRewind(ActionEvent actionEvent) {
     }
+
 }

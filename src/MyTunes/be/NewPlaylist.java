@@ -1,4 +1,4 @@
-package MyTunes.controller;
+package MyTunes.be;
 
 public class NewPlaylist {
 }
