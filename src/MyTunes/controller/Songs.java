@@ -2,20 +2,40 @@ package MyTunes.controller;
 
 public class Songs {
 
+    private final int ID;
     public String artist;
     public String title;
-    public String category;
-    public int time;
+    public String Genre;
+    public int playtime;
+    private String Location;
 
-    public Songs(String title, String artist, String category, int time)
+    public Songs(String title, String artist, String genre,String location, int playtime, int id)
     {
         this.artist = artist;
         this.title = title;
-        this.category = category;
-        this.time= time;
+        this.Genre = genre;
+        this.playtime= playtime;
+        ID = id;
+
+        setTitle(title);
+        setArtist(artist);
+        setLocation(location);
+        setGenre(genre);
+
     }
 
-    public Songs(String title, Object artist, Object category, Object time, String artist1) {
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
+
+
+
+    public Songs(String title, Object artist, Object category, Object time, int id, String artist1) {
+        ID = id;
         this.artist = artist1;
     }
 
@@ -41,20 +61,23 @@ public class Songs {
     public void setArtist(String artist) {
         artist = artist;
     }
-    public String getCategory() {
-        return category;
+    public String getGenre() {
+        return Genre;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setGenre(String category) {
+        this.Genre = Genre;
     }
 
-    public int getTime() {
-        return time;
+    public int getPlaytime() {
+        return playtime;
     }
 
-    public void setTime(int time) {
-        this.time = time;
+    public int getID() {
+        return ID;
+    }
+    public String toString(){
+        return this.getTitle() + "" + this.getArtist();
     }
 }
 
