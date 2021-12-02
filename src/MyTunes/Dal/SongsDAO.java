@@ -19,5 +19,17 @@ public class SongsDAO< AllSongs> {
     }
 
 
+    public Songs addSong(String title, String artist, String genre, int playtime, String location) {
+        return null;
+    }
 
+    public Songs updateSong(Songs song, String title, String artist, String genre, int playtime, String location) {
+    }
+
+    public Songs deleteSong(Songs songDelete) {
+    }
+
+    public Songs getSongs() {
+        ArrayList <Songs> allSongs = new ArrayList<>();
+    }
 }
