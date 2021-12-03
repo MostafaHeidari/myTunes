@@ -39,7 +39,8 @@ public class NewSongController implements Initializable {
         private final SongModel songModel = new SongModel();
         private final MyTunesController myTunesController = new MyTunesController();
         private MediaPlayer mediaPlayer;
-
+    private Object contentHandler;
+    private Runtime.Version parser;
 
 
     public NewSongController() throws IOException {
