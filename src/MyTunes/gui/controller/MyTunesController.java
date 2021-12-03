@@ -8,9 +8,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -39,10 +41,10 @@ public class MyTunesController implements Initializable {
     public TableColumn songCatCol;
     public TableColumn songDurationCol;
     public ImageView musicRewind;
-private MediaPlayer mediaPlayer;
-private int currentSongPlaying;
-private SongModel songModel;
-private final PlaylistModel playlistModel = new PlaylistModel();
+    private MediaPlayer mediaPlayer;
+    private int currentSongPlaying;
+    private SongModel songModel;
+    private final PlaylistModel playlistModel = new PlaylistModel();
 
     private ObservableList<NewPlaylist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Songs> allSongs = FXCollections.observableArrayList();
@@ -51,7 +53,6 @@ private final PlaylistModel playlistModel = new PlaylistModel();
     public MyTunesController() throws IOException {
         songModel = new SongModel();
     }
-
 
 
     @Override
@@ -68,30 +69,6 @@ private final PlaylistModel playlistModel = new PlaylistModel();
     }
 
 
-
-    public Button getNewSong() {
-        return newSong;
-    }
-
-    public void setNewSong(Button newSong) {
-        this.newSong = newSong;
-    }
-
-
-
-
-    public void AddSong(ActionEvent actionEvent) {
-        Button addSong =new Button();
-        addSong.setOnAction(new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent e)
-            {
-                Button []AddSong = new Button[0];
-            }
-        });
-    }
-
-
     public void handleNewSong(ActionEvent actionEvent) throws IOException {
         Parent root1;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyTunes/gui/view/newSong.fxml"));
@@ -102,8 +79,6 @@ private final PlaylistModel playlistModel = new PlaylistModel();
         stage.centerOnScreen();
         stage.show();
     }
-
-
 
 
     public void handleMusicRewind(ActionEvent actionEvent) {
@@ -127,7 +102,15 @@ private final PlaylistModel playlistModel = new PlaylistModel();
     public void volumeUp(SwipeEvent swipeEvent) {
     }
 
-    public void handleNewPlaylist(ActionEvent actionEvent) {
+    public void handleNewPlaylist(ActionEvent actionEvent) throws IOException {
+        Parent root2;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyTunes/gui/view/newPlaylist.fxml"));
+        root2 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root2));
+        stage.setTitle("Playlist");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     public void handleDeletePlaylist(ActionEvent actionEvent) {
@@ -142,11 +125,6 @@ private final PlaylistModel playlistModel = new PlaylistModel();
     public void handleMoveSongDown(ActionEvent actionEvent) {
     }
 
-    public void handleCloseApp(ActionEvent actionEvent) {
-    }
-
-    public void handleNewSong(ActionEvent actionEvent) {
-    }
 
     public void handleDeleteSong(ActionEvent actionEvent) {
     }
@@ -157,8 +135,18 @@ private final PlaylistModel playlistModel = new PlaylistModel();
     public void handleMusicPlayPause(ActionEvent actionEvent) {
     }
 
-    public void Play(MouseEvent mouseEvent) {
+    public void PlaySong(MouseEvent mouseEvent) {
+        if(mediaPlayer == null && tableOfSongs.getSelectionModel().getSelectedIndex() != -1){
+            currentSongPlaying = tableOfSongs.getSelectionModel().getSelectedIndex();
+            mediaPlayer.play();
+        }
     }
 
     public void handleDeleteSongOnPL(ActionEvent actionEvent) {
     }
+@FXML
+    public void closeButton(MouseEvent mouseEvent) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+    }
+}
