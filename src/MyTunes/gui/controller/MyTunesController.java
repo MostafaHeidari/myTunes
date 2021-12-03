@@ -61,6 +61,10 @@ private final PlaylistModel playlistModel = new PlaylistModel();
         songArtistCol.setCellValueFactory(new PropertyValueFactory<>("artist"));
         songCatCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
         songDurationCol.setCellValueFactory(new PropertyValueFactory<>("playtime"));
+        tableOfSongs.setItems(allSongs);
+
+        playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        tableAllPlaylist.setItems(playlistModel.getAllPlaylists());
     }
 
 
