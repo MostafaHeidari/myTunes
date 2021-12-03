@@ -15,9 +15,9 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
    <children>
-      <TableView fx:id="tableViewPlaylists" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
+      <TableView fx:id="tableAllPlaylist" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
-          <TableColumn fx:id="col_PName" prefWidth="63.19997978210449" text="Name" />
+          <TableColumn fx:id="playlistName" prefWidth="63.19997978210449" text="Name" />
           <TableColumn fx:id="col_PSongs" prefWidth="51.199989318847656" text="Song" />
             <TableColumn fx:id="col_PTime" prefWidth="64.79998779296875" text="Time" />
         </columns>
