@@ -23,10 +23,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.SwipeEvent;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -88,12 +90,30 @@ public class MyTunesController implements Initializable {
     }
 
     public void PreviousSong(MouseEvent mouseEvent) {
+        if (tableOfSongs.getSelectionModel().getSelectedIndex() != -1){
+            if (currentSongPlaying -1 == -1){
+                currentSongPlaying = 0;
+            }
+            else {
+                currentSongPlaying --;
+            }
+            play();
+        }
     }
 
-    public void handleMusicForward(ActionEvent actionEvent) {
-    }
 
-    public void NextSong(MouseEvent mouseEvent) {
+
+    public void NextSong(MouseEvent mouseEvent)
+    {if(tableOfSongs.getSelectionModel().getSelectedIndex()!= -1){
+        mediaPlayer.stop();
+        if(currentSongPlaying +1 == tableOfSongs.getItems().size()){
+            currentSongPlaying = 0;
+        }
+        else {
+            currentSongPlaying++;
+        }
+        play();
+    }
     }
 
     public void volumeDown(SwipeEvent swipeEvent) {
@@ -127,6 +147,10 @@ public class MyTunesController implements Initializable {
 
 
     public void handleDeleteSong(ActionEvent actionEvent) {
+        if(tableOfSongs.getSelectionModel().getSelectedIndex() != -1)
+        {
+            songModel.deleteSong((Songs) tableOfSongs.getSelectionModel().getSelectedItem());
+        }
     }
 
     public void handleEditSong(ActionEvent actionEvent) {
@@ -148,5 +172,33 @@ public class MyTunesController implements Initializable {
     public void closeButton(MouseEvent mouseEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void stopSong(MouseEvent mouseEvent) {
+        if(mediaPlayer == null){
+            mediaPlayer.stop();
+            lblCurrentSong.setText("No song is playing");
+            mediaPlayer = null;
+        }
+    }
+
+    private void play(){
+        mediaPlayer = new MediaPlayer(new Media(new File(tableOfSongs.getItems().get(currentSongPlaying).getTitle().toString)));
+        mediaPlayer.play();
+        mediaPlayer.setVolume(50);
+        lblCurrentSong.setText(tableOfSongs.getItems().get(currentSongPlaying).getTitle.toString);
+    }
+
+    public void searchSong(ActionEvent actionEvent) {
+        if (SearchTextField.getText() == null || SearcTextField.getText().length() <= 0){
+            tableOfSongs.setItems(songModel.getAllSongs());
+        }
+        else {
+            ObservableList<Songs> songSearcher = songModel.searchSongs(songModel.getAllSongs(),SearchTextField.getText());
+            tableOfSongs.setItems(songSearcher);
+        }
+    }
+
+    public void handleMusicForward(ActionEvent actionEvent) {
     }
 }
