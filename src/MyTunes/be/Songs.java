@@ -3,10 +3,10 @@ package MyTunes.be;
 public class Songs {
 
     private final int ID;
-    public String artist;
-    public String title;
-    public String Genre;
-    public int playtime;
+    private String artist;
+    private String title;
+    private String Genre;
+    private int playtime;
     private String Location;
 
     public Songs(String title, String artist, String genre,String location, int playtime, int id)
