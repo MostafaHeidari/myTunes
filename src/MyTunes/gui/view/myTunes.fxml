@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
    <children>
       <TableView fx:id="tableAllPlaylist" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
@@ -48,7 +48,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="SearchTextField" layoutX="595.0" layoutY="35.0" prefHeight="22.0" prefWidth="118.0" AnchorPane.topAnchor="35.0" />
+      <TextField fx:id="SearchTextField" layoutX="595.0" layoutY="35.0" onAction="#searchSong" prefHeight="22.0" prefWidth="118.0" AnchorPane.topAnchor="35.0" />
       <Text layoutX="554.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter" AnchorPane.topAnchor="39.05078125">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -104,7 +104,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <ImageView fx:id="stopSong" fitHeight="39.0" fitWidth="38.0" layoutX="73.0" layoutY="27.0">
+      <ImageView fx:id="stopSong" fitHeight="39.0" fitWidth="38.0" layoutX="73.0" layoutY="27.0" onMouseClicked="#stopSong">
          <image>
             <Image url="@../img/Stopbtn.PNG" />
          </image>
