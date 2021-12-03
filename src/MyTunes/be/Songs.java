@@ -4,7 +4,7 @@ public class Songs {
 
     private final int ID;
     private String artist;
-    private String title;
+    public String title;
     private String Genre;
     private int playtime;
     private String Location;
