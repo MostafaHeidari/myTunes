@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 
+import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,14 +27,49 @@ import javafx.scene.input.SwipeEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import jdk.jfr.Label;
 
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MyTunesController implements Initializable {
+    @FXML
+    public Slider volumeSlider;
+    @FXML
+    public Button btnStop;
+    @FXML
+    public TextField searchTextField;
+    @FXML
+    public Button btnSearch;
+    @FXML
+    public Label lblCurrentSong;
+    @FXML
+    public Button btnPlay;
+    @FXML
+    public Button btnForward;
+    @FXML
+    public Button btnBack;
+
+    @FXML
+    private javafx.scene.control.Button closeButton;
+    @FXML
+    private TableView<Songs> tableAllsongs;
+    @FXML
+    private TableView<NewPlaylist> tableAllPlaylists;
+    @FXML
+    private TableColumn<Songs, String> songTitle;
+    @FXML
+    private TableColumn<Songs, String> songArtist;
+    @FXML
+    private TableColumn<Songs, String> songCategory;
+    @FXML
+    private TableColumn<Songs, Integer> songTime;
+    @FXML
+    private TableColumn<Songs, String> playlistName;
     public Button newSong;
     public TableView tableOfSongs;
     public TableView SongsOnPlaylist;
@@ -51,6 +87,8 @@ public class MyTunesController implements Initializable {
     private ObservableList<NewPlaylist> allPlaylists = FXCollections.observableArrayList();
     private ObservableList<Songs> allSongs = FXCollections.observableArrayList();
 
+    private java.awt.Label SearchTextField;
+
 
     public MyTunesController() throws IOException {
         songModel = new SongModel();
@@ -67,7 +105,7 @@ public class MyTunesController implements Initializable {
         tableOfSongs.setItems(allSongs);
 
         playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        tableAllPlaylist.setItems(playlistModel.getAllPlaylists());
+        tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
     }
 
 
@@ -190,7 +228,7 @@ public class MyTunesController implements Initializable {
     }
 
     public void searchSong(ActionEvent actionEvent) {
-        if (SearchTextField.getText() == null || SearcTextField.getText().length() <= 0){
+        if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
             tableOfSongs.setItems(songModel.getAllSongs());
         }
         else {
