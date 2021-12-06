@@ -1,11 +1,11 @@
 package MyTunes.Bll;
 
-import MyTunes.Dal.PlaylistDao;
 import MyTunes.be.NewPlaylist;
 import java.io.IOException;
 import java.util.List;
+import MyTunes.Dal.PlaylistDAO;
 
-public class PlaylistManager {
+public class PlaylistManager<PlaylistDao> {
     private final PlaylistDao playlistDao;
 
     public PlaylistManager () throws IOException{
