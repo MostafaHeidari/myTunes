@@ -2,12 +2,12 @@ package MyTunes.be;
 
 public class Songs {
 
-    private final int ID;
-    private String artist;
+    public final int ID;
+    public String artist;
     public String title;
-    private String Genre;
-    private int playtime;
-    private String Location;
+    public String Genre;
+    public int playtime;
+    public String Location;
 
     public Songs(String title, String artist, String genre,String location, int playtime, int id)
     {
