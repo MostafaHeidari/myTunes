@@ -8,6 +8,7 @@ public class Songs {
     public String Genre;
     public int playtime;
     public String Location;
+    private String Text;
 
     public Songs(String title, String artist, String genre,String location, int playtime, int id)
     {
@@ -80,6 +81,14 @@ public class Songs {
     }
     public String toString(){
         return this.getTitle() + "" + this.getArtist();
+    }
+
+    public String getText() {
+        return Text;
+    }
+
+    public void setText(String text) {
+        Text = text;
     }
 }
 
