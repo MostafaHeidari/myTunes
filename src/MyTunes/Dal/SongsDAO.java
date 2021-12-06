@@ -24,12 +24,15 @@ public class SongsDAO< AllSongs> {
     }
 
     public Songs updateSong(Songs song, String title, String artist, String genre, int playtime, String location) {
+        return song;
     }
 
     public Songs deleteSong(Songs songDelete) {
+        return songDelete;
     }
 
-    public Songs getSongs() {
+    public ArrayList<Songs> getSongs() {
         ArrayList <Songs> allSongs = new ArrayList<>();
+        return allSongs;
     }
 }
