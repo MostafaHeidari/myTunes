@@ -6,9 +6,9 @@ import java.util.List;
 
 public class NewPlaylist {
 
-    private List<Songs> playlist;
-    private String playlistName;
-    private int ID;
+    public List<Songs> playlist;
+    public String playlistName;
+    public int ID;
 
     public NewPlaylist(int id,String name){
         this.playlistName = name;
