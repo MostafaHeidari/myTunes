@@ -7,8 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.xml.sax.helpers.DefaultHandler;
-
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.*;
