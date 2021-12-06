@@ -215,7 +215,7 @@ public class MyTunesController implements Initializable {
     public void stopSong(MouseEvent mouseEvent) {
         if(mediaPlayer == null){
             mediaPlayer.stop();
-            lblCurrentSong.setText("No song is playing");
+            lblCurrentSong.setText ("No song is playing");
             mediaPlayer = null;
         }
     }
