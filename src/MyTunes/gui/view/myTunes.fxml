@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyTunes.gui.controller.MyTunesController">
    <children>
       <TableView fx:id="tableViewPlaylists" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
@@ -56,37 +56,15 @@
       </Text>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="721.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="36.0">
          <image>
-            <Image url="@img/Very-Basic-Search-icon.png" />
+            <Image url="@../img/Very-Basic-Search-icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="musicRewind" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleMusicRewind" style="-fx-background-color: #E9FAFB;" AnchorPane.topAnchor="33.0">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/icons8-rewind-60.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="musicForward" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleMusicForward" style="-fx-background-color: #E9FAFB;">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/icons8-fast-forward-60.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="musicRewind" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleMusicRewind" style="-fx-background-color: #E9FAFB;" AnchorPane.topAnchor="33.0" />
+      <Button fx:id="musicForward" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleMusicForward" style="-fx-background-color: #E9FAFB;" />
       <Slider layoutX="77.0" layoutY="71.0" prefHeight="14.0" prefWidth="124.0" style="-fx-background-color: #C5EDFF;" />
       <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="53.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/icons8-speaker-128.png" />
+            <Image url="@../img/icons8-speaker-128.png" />
          </image>
       </ImageView>
       <Button fx:id="newPlaylist" layoutX="45.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleNewPlaylist" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="New" />
@@ -98,20 +76,38 @@
       <Button fx:id="newSongBtn" layoutX="455.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleNewSong" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="New" />
       <Button fx:id="Delete3" layoutX="580.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleDeleteSong" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
       <Button layoutX="516.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleEditSong" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Edit" />
-      <Button fx:id="musicPlayPause" layoutX="92.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleMusicPlayPause" style="-fx-background-color: none;">
-         <graphic>
-            <ImageView fitHeight="45.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/icons8-play-button-circled-90.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="musicPlayPause" layoutX="92.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleMusicPlayPause" style="-fx-background-color: none;" />
       <Button layoutX="317.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleDeleteSongOnPL" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
       <TextField layoutX="244.0" layoutY="35.0" prefHeight="26.0" prefWidth="124.0" />
       <Text layoutX="375.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is playing" />
+      <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="49.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-rewind-60.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="55.0" layoutX="118.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-play-button-circled-90.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="169.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-fast-forward-60.png" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="81.0" layoutY="25.0">
+         <image>
+            <Image url="@../img/Stopbtn.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
