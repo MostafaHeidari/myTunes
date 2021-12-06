@@ -239,4 +239,7 @@ public class MyTunesController implements Initializable {
 
     public void handleMusicForward(ActionEvent actionEvent) {
     }
+
+    public void handleCloseApp(ActionEvent actionEvent) {
+    }
 }
