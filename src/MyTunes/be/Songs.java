@@ -87,8 +87,9 @@ public class Songs {
         return Text;
     }
 
-    public void setText(String text) {
+    public String setText(String text) {
         Text = text;
+        return text;
     }
 }
 
