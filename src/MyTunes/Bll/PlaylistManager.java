@@ -19,4 +19,7 @@ public class PlaylistManager {
     public List<NewPlaylist>getAllPlaylists(){
         return playlistDao.getAllPlaylists();
     }
+
+    public void createPlaylist(String name) {
+    }
 }
