@@ -6,21 +6,14 @@ import java.util.List;
 
 public class PlaylistDAO {
 
-import java.util.List;
 
-    public class PlaylistDao {
-        public String createPlaylist(String name) {
-
-
-            public List<NewPlaylist> getAllPlaylists() {
-
-                public NewPlaylist createPlaylist(String name)
-            {
-
-            }
-
-            }
-
-        }
+    public static NewPlaylist createPlaylist(String name) {
+        return createPlaylist(name);
     }
+
+    public static List<NewPlaylist> getAllPlaylists() {
+        return getAllPlaylists();
+    }
+    
+
 }
