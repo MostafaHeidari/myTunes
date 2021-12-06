@@ -112,6 +112,6 @@
       </Button>
       <Button layoutX="317.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleDeleteSongOnPL" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
       <Text layoutX="375.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is playing" />
-      <Label fx:id="lblCurrentSong" layoutX="328.0" layoutY="43.0" prefHeight="18.0" prefWidth="43.0" text="Label" />
+      <Label fx:id="lblCurrentSong" layoutX="324.0" layoutY="42.0" prefHeight="18.0" prefWidth="43.0" text="Label" />
    </children>
 </AnchorPane>
