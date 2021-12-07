@@ -94,10 +94,10 @@ public void saveSong(javafx.event.ActionEvent actionEvent){
         String location = urlField.getText();
         int id = Integer.parseInt(idField.getText());
 
-    Songs newSong = new Songs(title, atist, genre, location,playtime, id);
+    Songs newSong = new Songs(title, artist, genre, location,playtime, id);
     newSong.setLocation(location);
 
-    this.songModel.addSong(title,atist,genre,playtime,location,id);
+    this.songModel.addSong(title,artist,genre,playtime,location,id);
 }
 
 
