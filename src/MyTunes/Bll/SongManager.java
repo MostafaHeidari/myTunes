@@ -1,42 +1,45 @@
-package MyTunes.Bll;
+package MyTunes.bll;
 
-import MyTunes.Bll.util.SongFilter;
-import MyTunes.Dal.SongsDAO;
+import MyTunes.bll.util.SongFilter;
+import MyTunes.dal.DALManager;
+import MyTunes.dal.DAO.SongsDAO;
 import MyTunes.be.Songs;
+import MyTunes.bll.ISongManager;
+import MyTunes.dal.IDALManager;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SongManager
+public class SongManager implements ISongManager
 {
-    private SongsDAO songsDAO;
+    private IDALManager dalManager;
     private SongFilter songFilter;
 
 
     public SongManager() throws IOException{
-        songsDAO = new SongsDAO();
+        dalManager = new DALManager();
         songFilter = new SongFilter();
     }
 
 
 
 
-    public Songs addSong(String title, String artist, String genre, int playtime, String location, int id) {
-        return songsDAO.addSong(title, artist, genre, playtime, location);
+    public Songs addSong(String title, String artist, String genre, String playtime, String location) {
+        return dalManager.addSong(title, artist, genre, playtime, location);
     }
 
-    public Songs updateSong(Songs song, String title, String artist, String genre, int playtime, String location) {
-        return songsDAO.updateSong(song,title,artist,genre,playtime,location);
+    public Songs updateSong(Songs song, String title, String artist, String genre, String playtime, String location) {
+        return dalManager.updateSong(song,title,artist,genre,playtime,location);
     }
 
     public Songs deleteSong(Songs songDelete) {
-        return songsDAO.deleteSong(songDelete);
+        return dalManager.deleteSong(songDelete);
     }
 
 
     public List <Songs> getSongs() {
-        List<Songs> allSongs = (List<Songs>) songsDAO.getSongs();
+        List<Songs> allSongs = dalManager.getSongs();
         return allSongs;
     }
     public ObservableList<Songs> searchSongs(ObservableList<Songs> songs, String text) {

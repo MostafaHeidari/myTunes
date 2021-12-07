@@ -1,4 +1,4 @@
-package MyTunes.Bll.util;
+package MyTunes.bll.util;
 
 import MyTunes.be.Songs;
 import javafx.collections.FXCollections;
@@ -10,9 +10,9 @@ public class SongFilter {
 
     public ObservableList<Songs> searchSong(ObservableList<Songs> songs, String text) {
         songSearch.clear();
-        for( Songs Songs : songs);{
+        for( Songs song : songs){
 
-            if(Songs.getTitle().toLowerCase().startsWith(text.toLowerCase())){
+            if(song.getTitle().toLowerCase().startsWith(text.toLowerCase())){
                 songSearch.add((Songs) songs);
             }
         }

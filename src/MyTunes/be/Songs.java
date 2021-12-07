@@ -2,15 +2,15 @@ package MyTunes.be;
 
 public class Songs {
 
-    public final int ID;
-    public String artist;
-    public String title;
-    public String Genre;
-    public int playtime;
-    public String Location;
+    private final int ID;
+    private String artist;
+    private String title;
+    private String Genre;
+    private String playtime;
+    private String Location;
     private String Text;
 
-    public Songs(String title, String artist, String genre,String location, int playtime, int id)
+    public Songs(String title, String artist, String genre,String location, String playtime, int id)
     {
         this.artist = artist;
         this.title = title;
@@ -72,7 +72,7 @@ public class Songs {
         this.Genre = Genre;
     }
 
-    public int getPlaytime() {
+    public String getPlaytime() {
         return playtime;
     }
 

@@ -1,23 +1,30 @@
-package MyTunes.Bll;
+package MyTunes.bll;
 
 import MyTunes.be.NewPlaylist;
-import MyTunes.Dal.PlaylistDAO;
+import MyTunes.dal.DAO.PlaylistDAO;
+
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class PlaylistManager<PlaylistDao> {
-    private final PlaylistDao playlistDao;
+    private final PlaylistDAO playlistDao;
 
     public PlaylistManager () throws IOException{
-        playlistDao = (PlaylistDao) new PlaylistDAO();
+        playlistDao =  new PlaylistDAO();
     }
 
     public NewPlaylist createNewPlaylist(String name){
-        return PlaylistDAO.createPlaylist(name);
+        try {
+            return playlistDao.createPlaylist(name);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public List<NewPlaylist>getAllPlaylists(){
-        return PlaylistDAO.getAllPlaylists();
+        return playlistDao.getAllPlaylists();
     }
 
     public void createPlaylist(String name) {

@@ -2,15 +2,11 @@ package MyTunes.gui.controller;
 
 import MyTunes.be.NewPlaylist;
 import MyTunes.gui.model.PlaylistModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import MyTunes.be.NewPlaylist;
-import MyTunes.gui.model.PlaylistModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,7 +42,7 @@ public class PlaylistController implements Initializable {
 
     void setInfo(NewPlaylist selectedItem){
         isEditing = true;
-        nameField.setText(selectedItem.getPlaylistName(String playlistName));
+        nameField.setText(selectedItem.getPlaylistName());
     }
 
 

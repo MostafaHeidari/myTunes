@@ -1,7 +1,8 @@
 package MyTunes.gui.model;
 
-import MyTunes.Bll.SongManager;
+import MyTunes.bll.SongManager;
 import MyTunes.be.Songs;
+import MyTunes.bll.ISongManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,7 +11,7 @@ import java.io.IOException;
 public class SongModel{
 
     private ObservableList<Songs> allSongs = FXCollections.observableArrayList();
-    private final SongManager songManager;
+    private final ISongManager songManager;
 
 
     public SongModel() throws IOException {
@@ -23,15 +24,15 @@ public class SongModel{
         return allSongs;
     }
 
-    public void addSong(String title,String artist, String genre, int playtime,String location, int id){
-        songManager.addSong(title,artist,genre,playtime,location,id);
+    public void addSong(String title,String artist, String genre, String playtime,String location){
+        songManager.addSong(title,artist,genre,playtime,location);
     }
 
     public void deleteSong (Songs songDelete){
         songManager.deleteSong(songDelete);
     }
 
-    public void updateSong(Songs songDelete, String title, String artist, String genre, int playtime, String location){
+    public void updateSong(Songs songDelete, String title, String artist, String genre, String playtime, String location){
         songManager.updateSong(songDelete, title, artist,genre,playtime,location);
     }
 

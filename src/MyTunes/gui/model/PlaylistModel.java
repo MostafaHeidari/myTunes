@@ -1,6 +1,6 @@
 package MyTunes.gui.model;
 
-import MyTunes.Bll.PlaylistManager;
+import MyTunes.bll.PlaylistManager;
 import MyTunes.be.NewPlaylist;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
