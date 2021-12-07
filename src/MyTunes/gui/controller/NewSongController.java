@@ -88,7 +88,7 @@ public void cancelCliked(MouseEvent mouseEvent){
 
 public void saveSong(javafx.event.ActionEvent actionEvent){
         String title = titleField.getText();
-        String atist = artistField.getText();
+        String artist = artistField.getText();
         String genre = genreField.getText();
         int playtime = Integer.parseInt(timeField.getText());
         String location = urlField.getText();
