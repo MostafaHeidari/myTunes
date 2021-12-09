@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class SongModel{
 
-    private ObservableList<Songs> allSongs = FXCollections.observableArrayList();
+    private final ObservableList<Songs> allSongs= FXCollections.observableArrayList();
     private final ISongManager songManager;
 
 
@@ -19,21 +19,24 @@ public class SongModel{
     }
 
     public ObservableList<Songs>getAllSongs(){
-        allSongs = FXCollections.observableArrayList();
+        allSongs.clear();
         allSongs.addAll(songManager.getSongs());
         return allSongs;
     }
 
     public void addSong(String title,String artist, String genre, String playtime,String location){
-        songManager.addSong(title,artist,genre,playtime,location);
+        Songs s = songManager.addSong(title,artist,genre,playtime,location); //db
+        allSongs.add(s); // brugerflade
     }
 
     public void deleteSong (Songs songDelete){
-        songManager.deleteSong(songDelete);
+        boolean succes = songManager.deleteSong(songDelete);
+        if(succes==true)
+            allSongs.remove(songDelete);
     }
 
     public void updateSong(Songs songDelete, String title, String artist, String genre, String playtime, String location){
-        songManager.updateSong(songDelete, title, artist,genre,playtime,location);
+       songManager.updateSong(songDelete, title, artist,genre,playtime,location);
     }
 
     public ObservableList<Songs> searchSongs(ObservableList<Songs> songs, String text ){

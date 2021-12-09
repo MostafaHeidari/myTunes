@@ -12,7 +12,7 @@ public interface ISongManager {
     public Songs updateSong(Songs song, String title, String artist, String genre, String playtime, String location);
 
 
-    public Songs deleteSong(Songs songDelete);
+    public boolean deleteSong(Songs songDelete);
 
 
     public List<Songs> getSongs();

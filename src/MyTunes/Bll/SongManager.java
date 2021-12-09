@@ -2,9 +2,7 @@ package MyTunes.bll;
 
 import MyTunes.bll.util.SongFilter;
 import MyTunes.dal.DALManager;
-import MyTunes.dal.DAO.SongsDAO;
 import MyTunes.be.Songs;
-import MyTunes.bll.ISongManager;
 import MyTunes.dal.IDALManager;
 import javafx.collections.ObservableList;
 
@@ -24,7 +22,6 @@ public class SongManager implements ISongManager
 
 
 
-
     public Songs addSong(String title, String artist, String genre, String playtime, String location) {
         return dalManager.addSong(title, artist, genre, playtime, location);
     }
@@ -33,8 +30,11 @@ public class SongManager implements ISongManager
         return dalManager.updateSong(song,title,artist,genre,playtime,location);
     }
 
-    public Songs deleteSong(Songs songDelete) {
-        return dalManager.deleteSong(songDelete);
+    public boolean deleteSong(Songs songDelete) {
+        if (songDelete !=null){
+            return dalManager.deleteSong(songDelete);
+        }
+        return false;
     }
 
 

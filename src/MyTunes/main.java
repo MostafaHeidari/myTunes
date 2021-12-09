@@ -11,6 +11,8 @@ private static int bredde = 800;
 private static int højde = 650;
 
 
+
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/MyTunes/gui/view/myTunes.fxml"));
