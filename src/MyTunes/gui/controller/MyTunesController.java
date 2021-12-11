@@ -4,28 +4,19 @@ import MyTunes.be.NewPlaylist;
 import MyTunes.be.Songs;
 import MyTunes.gui.model.PlaylistModel;
 import MyTunes.gui.model.SongModel;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.SwipeEvent;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,8 +32,8 @@ public class MyTunesController implements Initializable {
     public Button btnSearch;
     @FXML
     public Label lblCurrentSong;
-   @FXML
-   public Button btnPlay;
+    @FXML
+    public Button btnPlay;
     @FXML
     public Button btnForward;
     @FXML
@@ -200,7 +191,6 @@ public class MyTunesController implements Initializable {
     private void play() {
 
     }
-
 
 
     public void searchSong(ActionEvent actionEvent) {
