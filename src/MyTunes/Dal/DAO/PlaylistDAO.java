@@ -1,39 +1,55 @@
 package MyTunes.dal.DAO;
 
 import MyTunes.be.NewPlaylist;
+import MyTunes.be.Songs;
 
 import java.io.IOException;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlaylistDAO {
 
-    public PlaylistDAO() throws IOException {
+    private Connection con;
+
+    public PlaylistDAO (Connection connection) {
+        con = connection;
+
     }
 
-    public NewPlaylist createPlaylist(String name) throws SQLException {
-        /*String sql = "INSERT INTO Playlist (Name) VALUES(?);";
-        Connection con = connectionPool.checkOut(); // <<< Using the object pool here <<<
-        try (PreparedStatement st = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
-            st.setString(1,name);
-            st.executeUpdate();
-            ResultSet rs = st.getGeneratedKeys();
-            int id = 0;
-            if (rs.next()){
-                id = rs.getInt(1);
+    public List<NewPlaylist> getAllplaylist() {
+        List<NewPlaylist> allNewPlaylist = new ArrayList<>();
+
+        try {
+            String sqlStatement = "SELECT * FROM [Song].[dbo].[playlist]";
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sqlStatement);
+            while (rs.next()) {
+                String title = rs.getString("playlistName");
+                int id = rs.getInt("id");
+                allNewPlaylist.add(new NewPlaylist(id,title));
             }
-            Playlist playlist = new Playlist(name,id);
-            return playlist;
-        } catch (SQLException ex) {
-            throw new SQLException("Could not create playlist", ex);
-        } finally {
-            connectionPool.checkIn(con);
-        }*/
-        return null;
-
-    }
-
-    public List<NewPlaylist> getAllPlaylists() {
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return null;
     }
+
+    public NewPlaylist addplaylist(String playlistName) {
+        int insertedId = -1;
+        try {
+            String sqlStatement = "INSERT INTO Song (playlistName) VALUES (?);";
+            PreparedStatement statement = con.prepareStatement(sqlStatement, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, playlistName);
+            statement.execute();
+            ResultSet rs = statement.getGeneratedKeys();
+            rs.next();
+            insertedId = rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        NewPlaylist newPlaylist = new NewPlaylist(0, playlistName);
+        return newPlaylist;
+    }
+
 }

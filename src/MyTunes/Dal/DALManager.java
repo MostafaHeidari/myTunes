@@ -1,6 +1,8 @@
 package MyTunes.dal;
 
+import MyTunes.be.NewPlaylist;
 import MyTunes.be.Songs;
+import MyTunes.dal.DAO.PlaylistDAO;
 import MyTunes.dal.DAO.SongsDAO;
 import MyTunes.dal.db.DatabaseConnector;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
@@ -14,17 +16,29 @@ public class DALManager implements IDALManager {
     private SongsDAO songsDAO;
     private DatabaseConnector connector;
 
+    private PlaylistDAO playlistDAO;
 
     public DALManager() {
 
         try {
             connector = new DatabaseConnector();
             songsDAO = new SongsDAO(connector.getConnection());
+            playlistDAO = new PlaylistDAO(connector.getConnection());
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public NewPlaylist addPlaylist(String playlistName) {
+        return playlistDAO.addplaylist(playlistName);
+    }
+
+    @Override
+    public List<NewPlaylist> getPlaylist() {
+        return playlistDAO.getAllplaylist();
     }
 
 
@@ -39,13 +53,12 @@ public class DALManager implements IDALManager {
     }
 
     @Override
-    public Songs deleteSong(Songs songDelete) {
-        return null;
+    public boolean deleteSong(Songs songDelete) {
+        return songsDAO.deleteSong(songDelete);
     }
 
     @Override
     public List<Songs> getSongs() {
         return songsDAO.getAllsongs();
     }
-
 }

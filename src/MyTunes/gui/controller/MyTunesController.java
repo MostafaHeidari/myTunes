@@ -34,17 +34,17 @@ public class MyTunesController implements Initializable {
     @FXML
     public Slider volumeSlider;
     @FXML
-    public ImageView btnStop;
+    public Button btnStop;
     @FXML
     public TextField searchTextField;
     @FXML
-    public ImageView btnSearch;
+    public Button btnSearch;
     @FXML
     public Label lblCurrentSong;
+   @FXML
+   public Button btnPlay;
     @FXML
-    public ImageView btnPlay;
-    @FXML
-    public ImageView btnForward;
+    public Button btnForward;
     @FXML
     public Button btnBack;
 
@@ -107,31 +107,27 @@ public class MyTunesController implements Initializable {
     }
 
     public void PreviousSong(MouseEvent mouseEvent) {
-        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1){
-            if (currentSongPlaying -1 == -1){
+        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
+            if (currentSongPlaying - 1 == -1) {
                 currentSongPlaying = 0;
-            }
-            else {
-                currentSongPlaying --;
+            } else {
+                currentSongPlaying--;
             }
             play();
         }
     }
 
 
-
-    public void NextSong(MouseEvent mouseEvent)
-    {
-        if(tableAllSongs.getSelectionModel().getSelectedIndex()!= -1){
-        mediaPlayer.stop();
-        if(currentSongPlaying +1 == tableAllSongs.getItems().size()){
-            currentSongPlaying = 0;
+    public void NextSong(MouseEvent mouseEvent) {
+        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
+            mediaPlayer.stop();
+            if (currentSongPlaying + 1 == tableAllSongs.getItems().size()) {
+                currentSongPlaying = 0;
+            } else {
+                currentSongPlaying++;
+            }
+            play();
         }
-        else {
-            currentSongPlaying++;
-        }
-        play();
-    }
     }
 
     public void volumeDown(SwipeEvent swipeEvent) {
@@ -165,8 +161,7 @@ public class MyTunesController implements Initializable {
 
 
     public void handleDeleteSong(ActionEvent actionEvent) {
-        if(tableAllSongs.getSelectionModel().getSelectedIndex() != -1)
-        {
+        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
             songModel.deleteSong((Songs) tableAllSongs.getSelectionModel().getSelectedItem());
         }
     }
@@ -178,7 +173,7 @@ public class MyTunesController implements Initializable {
     }
 
     public void PlaySong(MouseEvent mouseEvent) {
-        if(mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1){
+        if (mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
             currentSongPlaying = tableAllSongs.getSelectionModel().getSelectedIndex();
             mediaPlayer.play();
         }
@@ -186,26 +181,27 @@ public class MyTunesController implements Initializable {
 
     public void handleDeleteSongOnPL(ActionEvent actionEvent) {
     }
-@FXML
+
+    @FXML
     public void closeButton(MouseEvent mouseEvent) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
 
     public void stopSong(MouseEvent mouseEvent) {
-        if(mediaPlayer == null){
+        if (mediaPlayer == null) {
             mediaPlayer.stop();
             lblCurrentSong.setText("No song is playing");
             mediaPlayer = null;
         }
     }
 
-    private void play(){
-        //mediaPlayer = new MediaPlayer(new Media(new File(tableAllSongs.getItems().get(currentSongPlaying).getLocation()).toString())));
-       // mediaPlayer.play();
-       // mediaPlayer.setVolume(50);
-      //  lblCurrentSong.setText(tableAllSongs.getItems().get(currentSongPlaying).getTitle().toString());
+
+    private void play() {
+
     }
+
+
 
     public void searchSong(ActionEvent actionEvent) {
         /*if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
@@ -221,5 +217,13 @@ public class MyTunesController implements Initializable {
     }
 
     public void handleCloseApp(ActionEvent actionEvent) {
+    }
+
+    public void handlePlay(ActionEvent actionEvent) {
+        if (mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
+            currentSongPlaying = tableAllSongs.getSelectionModel().getSelectedIndex();
+            play();
+        }
+
     }
 }

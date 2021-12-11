@@ -42,7 +42,7 @@ public class PlaylistController implements Initializable {
 
     void setInfo(NewPlaylist selectedItem){
         isEditing = true;
-        nameField.setText(selectedItem.getPlaylistName());
+        nameField.setText(selectedItem.getplaylistName());
     }
 
 

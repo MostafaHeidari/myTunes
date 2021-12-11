@@ -9,7 +9,7 @@ public interface ISongManager {
     public Songs addSong(String title, String artist, String genre, String playtime, String location);
 
 
-    public Songs updateSong(Songs song, String title, String artist, String genre, String playtime, String location);
+    public Songs updateSong(Songs sonng, String title, String artist, String genre, String playtime, String location);
 
 
     public boolean deleteSong(Songs songDelete);

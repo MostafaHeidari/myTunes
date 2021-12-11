@@ -1,32 +1,36 @@
 package MyTunes.bll;
-
+import MyTunes.be.Songs;
+import MyTunes.dal.DALManager;
 import MyTunes.be.NewPlaylist;
 import MyTunes.dal.DAO.PlaylistDAO;
+import MyTunes.dal.IDALManager;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.List;
 
-public class PlaylistManager<PlaylistDao> {
-    private final PlaylistDAO playlistDao;
+public class PlaylistManager implements IPlaylistManager {
+    private IDALManager dalManager;
 
-    public PlaylistManager () throws IOException{
-        playlistDao =  new PlaylistDAO();
+    public PlaylistManager() throws IOException {
+        dalManager = new DALManager();
     }
+    public NewPlaylist addPlaylist(String playlistName, int id) {
+        return dalManager.addPlaylist(playlistName);
 
-    public NewPlaylist createNewPlaylist(String name){
-        try {
-            return playlistDao.createPlaylist(name);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    }
+    @Override
+    public NewPlaylist updatePlaylist(NewPlaylist playlist, String playlistName) {
         return null;
     }
-
-    public List<NewPlaylist>getAllPlaylists(){
-        return playlistDao.getAllPlaylists();
+    @Override
+    public boolean deletePlaylist(NewPlaylist playlist) {
+        return false;
     }
 
-    public void createPlaylist(String name) {
+
+    @Override
+    public List<NewPlaylist> getPlaylist() {
+        List<NewPlaylist> AllPlaylists = dalManager.getPlaylist();
+        return AllPlaylists;
     }
 }

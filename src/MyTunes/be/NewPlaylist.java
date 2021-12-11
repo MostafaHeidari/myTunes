@@ -23,12 +23,12 @@ public class NewPlaylist {
         this.playlist = playlist;
     }
 
-    public String getPlaylistName()
+    public String getplaylistName()
     {
         return playlistName;
     }
 
-    public void setPlaylistName(String playlistName) {
+    public void setplaylistName(String playlistName) {
         this.playlistName = playlistName;
     }
 
@@ -39,4 +39,5 @@ public class NewPlaylist {
     public void setID(int ID) {
         this.ID = ID;
     }
+
 }

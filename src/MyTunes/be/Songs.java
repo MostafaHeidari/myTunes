@@ -42,11 +42,6 @@ public class Songs {
         this.artist = artist1;
     }
 
-    public static void remove(Songs song) {
-    }
-
-    public static void add(Songs song) {
-    }
 
     public String getTitle()
     {

@@ -20,8 +20,6 @@ public class SongManager implements ISongManager
         songFilter = new SongFilter();
     }
 
-
-
     public Songs addSong(String title, String artist, String genre, String playtime, String location) {
         return dalManager.addSong(title, artist, genre, playtime, location);
     }
@@ -36,7 +34,6 @@ public class SongManager implements ISongManager
         }
         return false;
     }
-
 
     public List <Songs> getSongs() {
         List<Songs> allSongs = dalManager.getSongs();

@@ -6,16 +6,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class main extends Application {
 private static int bredde = 800;
 private static int højde = 650;
 
 
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/MyTunes/gui/view/myTunes.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("gui/view/myTunes.fxml")));
         primaryStage.setTitle("MyTunes");
         primaryStage.setScene(new Scene(root, bredde, højde));
         primaryStage.show();
