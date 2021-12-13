@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.IOException;
+import java.util.List;
 
 public class SongModel{
 
@@ -38,6 +39,7 @@ public class SongModel{
     public void updateSong(Songs songDelete, String title, String artist, String genre, String playtime, String location){
        songManager.updateSong(songDelete, title, artist,genre,playtime,location);
     }
+
 
     public ObservableList<Songs> searchSongs(ObservableList<Songs> songs, String text ){
         return songManager.searchSongs(songs,text);

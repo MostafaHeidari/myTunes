@@ -33,12 +33,13 @@ public class DALManager implements IDALManager {
     }
 
     public NewPlaylist addPlaylist(String playlistName) {
-        return playlistDAO.addplaylist(playlistName);
+        return playlistDAO.addPlaylist(playlistName);
     }
 
+    //getPlaylist
     @Override
     public List<NewPlaylist> getPlaylist() {
-        return playlistDAO.getAllplaylist();
+        return playlistDAO.getAllPlaylist();
     }
 
 

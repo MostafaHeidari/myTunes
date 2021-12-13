@@ -6,7 +6,7 @@ import MyTunes.be.Songs;
 import java.util.List;
 
 public interface IPlaylistManager {
-    public NewPlaylist addPlaylist(String playlistName, int id);
+    public NewPlaylist addPlaylist(String playlistName);
 
     public NewPlaylist updatePlaylist(NewPlaylist playlist, String playlistName);
 

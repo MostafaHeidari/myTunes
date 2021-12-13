@@ -10,9 +10,11 @@ public class NewPlaylist {
     private String playlistName;
     private int ID;
 
-    public NewPlaylist(int id,String name){
-        this.playlistName = name;
+    public NewPlaylist(String playlistName, int id){
+        this.playlistName = playlistName;
         this.ID = ID;
+
+        setplaylistName(playlistName);
     }
 
     public List<Songs>getPlaylist(){
@@ -23,7 +25,7 @@ public class NewPlaylist {
         this.playlist = playlist;
     }
 
-    public String getplaylistName()
+    public String getPlaylistName()
     {
         return playlistName;
     }

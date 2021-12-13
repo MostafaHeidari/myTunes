@@ -16,9 +16,7 @@
    <children>
       <TableView fx:id="tableAllPlaylists" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
-          <TableColumn fx:id="playlistName" prefWidth="63.19997978210449" text="Name" />
-          <TableColumn fx:id="col_PSongs" prefWidth="51.199989318847656" text="Song" />
-            <TableColumn fx:id="col_PTime" prefWidth="64.79998779296875" text="Playtime" />
+          <TableColumn fx:id="playlistName" prefWidth="179.20001220703125" text="Name" />
         </columns>
       </TableView>
       <TableView fx:id="table_View_Songs_on_Playlists" layoutX="244.0" layoutY="138.0" prefHeight="342.0" prefWidth="124.0" />
@@ -79,8 +77,8 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Button layoutX="36.0" layoutY="31.0" mnemonicParsing="false" text="⬅" />
-      <Button layoutX="195.0" layoutY="33.0" mnemonicParsing="false" text="➡" />
+      <Button layoutX="39.0" layoutY="26.0" mnemonicParsing="false" text="⬅" />
+      <Button layoutX="195.0" layoutY="27.0" mnemonicParsing="false" text="➡" />
       <Button fx:id="btnStop" layoutX="75.0" layoutY="15.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="⏹" />
       <Label fx:id="lblCurrentSong" layoutX="342.0" layoutY="40.0" text="Label" />
    </children>

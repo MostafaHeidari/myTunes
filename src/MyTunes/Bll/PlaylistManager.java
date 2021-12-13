@@ -1,4 +1,5 @@
 package MyTunes.bll;
+
 import MyTunes.be.Songs;
 import MyTunes.dal.DALManager;
 import MyTunes.be.NewPlaylist;
@@ -14,20 +15,23 @@ public class PlaylistManager implements IPlaylistManager {
     public PlaylistManager() throws IOException {
         dalManager = new DALManager();
     }
-    public NewPlaylist addPlaylist(String playlistName, int id) {
+
+    public NewPlaylist addPlaylist(String playlistName) {
         return dalManager.addPlaylist(playlistName);
 
     }
+
     @Override
     public NewPlaylist updatePlaylist(NewPlaylist playlist, String playlistName) {
         return null;
     }
+
     @Override
     public boolean deletePlaylist(NewPlaylist playlist) {
         return false;
     }
 
-
+    //getPlaylist
     @Override
     public List<NewPlaylist> getPlaylist() {
         List<NewPlaylist> AllPlaylists = dalManager.getPlaylist();

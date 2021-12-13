@@ -4,6 +4,7 @@ import MyTunes.be.NewPlaylist;
 import MyTunes.be.Songs;
 import MyTunes.gui.model.PlaylistModel;
 import MyTunes.gui.model.SongModel;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.SwipeEvent;
 import javafx.scene.media.MediaPlayer;
@@ -56,13 +58,15 @@ public class MyTunesController implements Initializable {
     @FXML
     private TableColumn<Songs, String> playlistName;
     private MediaPlayer mediaPlayer;
-    private int currentSongPlaying;
+    private int currentSongPlaying = 0;
     private SongModel songModel;
-    private final PlaylistModel playlistModel = new PlaylistModel();
+    private PlaylistModel playlistModel;
+    //private final PlaylistModel playlistModel = new PlaylistModel();
 
 
     public MyTunesController() throws IOException {
         songModel = new SongModel();
+        playlistModel = new PlaylistModel();
     }
 
 
@@ -74,8 +78,10 @@ public class MyTunesController implements Initializable {
         songTime.setCellValueFactory(new PropertyValueFactory<>("playtime"));
         tableAllSongs.setItems(songModel.getAllSongs());
 
-        playlistName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        //tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
+        //playlist
+        playlistName.setCellValueFactory(new PropertyValueFactory<>("playlistName"));
+        tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
+
     }
 
 
@@ -126,6 +132,8 @@ public class MyTunesController implements Initializable {
 
     public void volumeUp(SwipeEvent swipeEvent) {
     }
+
+    //handleNewPlaylist window
 
     public void handleNewPlaylist(ActionEvent actionEvent) throws IOException {
         Parent root2;

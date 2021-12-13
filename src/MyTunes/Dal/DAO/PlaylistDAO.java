@@ -16,10 +16,9 @@ public class PlaylistDAO {
         con = connection;
 
     }
-
-    public List<NewPlaylist> getAllplaylist() {
+// getAllPlaylist
+    public List<NewPlaylist> getAllPlaylist() {
         List<NewPlaylist> allNewPlaylist = new ArrayList<>();
-
         try {
             String sqlStatement = "SELECT * FROM [Song].[dbo].[playlist]";
             Statement statement = con.createStatement();
@@ -27,15 +26,18 @@ public class PlaylistDAO {
             while (rs.next()) {
                 String title = rs.getString("playlistName");
                 int id = rs.getInt("id");
-                allNewPlaylist.add(new NewPlaylist(id,title));
+                allNewPlaylist.add(new NewPlaylist(title, id));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return null;
+        return allNewPlaylist;
     }
 
-    public NewPlaylist addplaylist(String playlistName) {
+
+    //NewPlaylist
+
+    public NewPlaylist addPlaylist(String playlistName) {
         int insertedId = -1;
         try {
             String sqlStatement = "INSERT INTO Song (playlistName) VALUES (?);";
@@ -48,8 +50,9 @@ public class PlaylistDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        NewPlaylist newPlaylist = new NewPlaylist(0, playlistName);
+        NewPlaylist newPlaylist = new NewPlaylist(playlistName,0);
         return newPlaylist;
+
     }
 
 }

@@ -35,6 +35,7 @@ public class SongManager implements ISongManager
         return false;
     }
 
+    //getSongs
     public List <Songs> getSongs() {
         List<Songs> allSongs = dalManager.getSongs();
         return allSongs;
