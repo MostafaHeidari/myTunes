@@ -10,12 +10,12 @@ public class Songs {
     private String Location;
     private String Text;
 
-    public Songs(String title, String artist, String genre,String location, String playtime, int id)
-    {
+    public Songs(String title, String artist, String genre, String location, String playtime, int id, String URL) {
         this.artist = artist;
         this.title = title;
         this.Genre = genre;
-        this.playtime= playtime;
+        this.playtime = playtime;
+        this.URL = URL;
         ID = id;
 
         setTitle(title);
@@ -24,6 +24,26 @@ public class Songs {
         setGenre(genre);
 
     }
+
+    public Songs(String title, String artist, String genre, String location, String playtime, int id) {
+        this.artist = artist;
+        this.title = title;
+        this.Genre = genre;
+        this.playtime = playtime;
+        this.URL = URL;
+        ID = id;
+    }
+
+
+    public String getURL() {
+        return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+
+    private String URL;
 
 
 
@@ -36,15 +56,13 @@ public class Songs {
     }
 
 
-
     public Songs(String title, Object artist, Object category, Object time, int id, String artist1) {
         ID = id;
         this.artist = artist1;
     }
 
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return title;
     }
 
@@ -59,6 +77,7 @@ public class Songs {
     public void setArtist(String artist) {
         artist = artist;
     }
+
     public String getGenre() {
         return Genre;
     }
@@ -74,7 +93,8 @@ public class Songs {
     public int getID() {
         return ID;
     }
-    public String toString(){
+
+    public String toString() {
         return this.getTitle() + "" + this.getArtist();
     }
 
@@ -86,5 +106,6 @@ public class Songs {
         Text = text;
         return text;
     }
+
 }
 

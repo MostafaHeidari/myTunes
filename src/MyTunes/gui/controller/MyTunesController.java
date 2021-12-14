@@ -16,14 +16,20 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.SwipeEvent;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MyTunesController implements Initializable {
+    public Text songTextPlaying;
+    private TableView<Songs> SongTable;
     @FXML
     public Slider volumeSlider;
     @FXML
@@ -149,6 +155,7 @@ public class MyTunesController implements Initializable {
     public void handleDeletePlaylist(ActionEvent actionEvent) {
     }
 
+
     public void handleEditPlaylist(ActionEvent actionEvent) {
     }
 
@@ -171,12 +178,26 @@ public class MyTunesController implements Initializable {
     public void handleMusicPlayPause(ActionEvent actionEvent) {
     }
 
-    public void PlaySong(MouseEvent mouseEvent) {
-        if (mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
-            currentSongPlaying = tableAllSongs.getSelectionModel().getSelectedIndex();
+    // new mediaPlay
+    public void mediaPlay() {
+        if (mediaPlayer == null) {
+            Media pick = new Media(new File(tableAllSongs.getSelectionModel().getSelectedItem().getURL()).toURI().toString());
+            mediaPlayer = new MediaPlayer(pick);
             mediaPlayer.play();
+            songTextPlaying.setText(tableAllSongs.getSelectionModel().getSelectedItem().getTitle());
+            btnPlay.setVisible(false);
+            mediaPlayer.setOnEndOfMedia(() -> {
+                mediaPlayer.stop();
+                mediaPlayer = null;
+            });
+        }else {
+            mediaPlayer.pause();
+            mediaPlayer = null;
         }
+        System.out.println(mediaPlayer.getStatus());
     }
+
+
 
     public void handleDeleteSongOnPL(ActionEvent actionEvent) {
     }
@@ -214,8 +235,11 @@ public class MyTunesController implements Initializable {
     public void handleMusicForward(ActionEvent actionEvent) {
     }
 
-    public void handleCloseApp(ActionEvent actionEvent) {
+
+    public void handleCloseApp() {
+        System.exit(0);
     }
+
 
     public void handlePlay(ActionEvent actionEvent) {
         if (mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {

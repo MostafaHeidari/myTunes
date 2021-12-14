@@ -44,7 +44,7 @@ public class PlaylistController implements Initializable {
         stage.close();
     }
 
-    void setInfo(NewPlaylist selectedItem){
+    public  void setInfo(NewPlaylist selectedItem){
         isEditing = true;
         nameField.setText(selectedItem.getPlaylistName());
     }
