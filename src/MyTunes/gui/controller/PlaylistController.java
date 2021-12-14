@@ -25,7 +25,6 @@ public class PlaylistController implements Initializable {
     @FXML
     private javafx.scene.control.Button safeButton;
     private boolean isEditing = false;
-    private DALManager PlaylistModel;
 
 
     @Override
@@ -52,6 +51,6 @@ public class PlaylistController implements Initializable {
     // savePlaylist
     public void savePlaylist(ActionEvent actionEvent) {
             String playlistName = nameGiver.getText();
-            this.PlaylistModel.addPlaylist(playlistName);
+            this.playlistModel.addPlaylist(playlistName);
     }
 }

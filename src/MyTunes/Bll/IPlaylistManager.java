@@ -13,6 +13,4 @@ public interface IPlaylistManager {
     public boolean deletePlaylist(NewPlaylist playlist);
 
     public List<NewPlaylist> getPlaylist();
-
-
 }

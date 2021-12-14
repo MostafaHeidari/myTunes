@@ -28,7 +28,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MyTunesController implements Initializable {
-    public Text songTextPlaying;
+    public Label songTextPlaying;
     private TableView<Songs> SongTable;
     @FXML
     public Slider volumeSlider;
@@ -116,7 +116,7 @@ public class MyTunesController implements Initializable {
             } else {
                 currentSongPlaying--;
             }
-            play();
+            mediaPlay();
         }
     }
 
@@ -129,7 +129,7 @@ public class MyTunesController implements Initializable {
             } else {
                 currentSongPlaying++;
             }
-            play();
+            mediaPlay();
         }
     }
 
@@ -181,11 +181,11 @@ public class MyTunesController implements Initializable {
     // new mediaPlay
     public void mediaPlay() {
         if (mediaPlayer == null) {
-            Media pick = new Media(new File(tableAllSongs.getSelectionModel().getSelectedItem().getURL()).toURI().toString());
+            Media pick = new Media(new File(tableAllSongs.getSelectionModel().getSelectedItem().getLocation()).toURI().toString());
             mediaPlayer = new MediaPlayer(pick);
             mediaPlayer.play();
             songTextPlaying.setText(tableAllSongs.getSelectionModel().getSelectedItem().getTitle());
-            btnPlay.setVisible(false);
+            btnPlay.setDisable(true);
             mediaPlayer.setOnEndOfMedia(() -> {
                 mediaPlayer.stop();
                 mediaPlayer = null;
@@ -217,10 +217,6 @@ public class MyTunesController implements Initializable {
     }
 
 
-    private void play() {
-
-    }
-
 
     public void searchSong(ActionEvent actionEvent) {
         /*if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
@@ -244,7 +240,7 @@ public class MyTunesController implements Initializable {
     public void handlePlay(ActionEvent actionEvent) {
         if (mediaPlayer == null && tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
             currentSongPlaying = tableAllSongs.getSelectionModel().getSelectedIndex();
-            play();
+            mediaPlay();
         }
 
     }

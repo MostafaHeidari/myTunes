@@ -7,52 +7,24 @@ public class Songs {
     private String title;
     private String Genre;
     private String playtime;
-    private String Location;
+    private String location;
     private String Text;
-
-    public Songs(String title, String artist, String genre, String location, String playtime, int id, String URL) {
-        this.artist = artist;
-        this.title = title;
-        this.Genre = genre;
-        this.playtime = playtime;
-        this.URL = URL;
-        ID = id;
-
-        setTitle(title);
-        setArtist(artist);
-        setLocation(location);
-        setGenre(genre);
-
-    }
 
     public Songs(String title, String artist, String genre, String location, String playtime, int id) {
         this.artist = artist;
         this.title = title;
         this.Genre = genre;
         this.playtime = playtime;
-        this.URL = URL;
+        this.location = location;
         ID = id;
     }
 
-
-    public String getURL() {
-        return URL;
-    }
-
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
-
-    private String URL;
-
-
-
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
 
