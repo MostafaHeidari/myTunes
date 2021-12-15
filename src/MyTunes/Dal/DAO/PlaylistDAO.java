@@ -40,7 +40,7 @@ public class PlaylistDAO {
     public NewPlaylist addPlaylist(String playlistName) {
         int insertedId = -1;
         try {
-            String sqlStatement = "INSERT INTO Song (playlistName) VALUES (?);";
+            String sqlStatement = "INSERT INTO playlist (playlistName) VALUES (?);";
             PreparedStatement statement = con.prepareStatement(sqlStatement, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, playlistName);
             statement.execute();

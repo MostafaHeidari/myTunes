@@ -33,7 +33,7 @@ public class MyTunesController implements Initializable {
     @FXML
     public Slider volumeSlider;
     @FXML
-    public Button btnStop;
+    public Button pauseBtn;
     @FXML
     public TextField searchTextField;
     @FXML
@@ -195,6 +195,10 @@ public class MyTunesController implements Initializable {
             mediaPlayer = null;
         }
         System.out.println(mediaPlayer.getStatus());
+    }
+
+    public void mediaPause(){
+        mediaPlayer.pause();
     }
 
 
