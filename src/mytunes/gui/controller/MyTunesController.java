@@ -1,5 +1,10 @@
 package mytunes.gui.controller;
 
+import mytunes.be.NewPlaylist;
+import mytunes.be.Songs;
+import mytunes.gui.model.PlaylistModel;
+import mytunes.gui.model.SongModel;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,15 +13,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.SwipeEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
 import mytunes.gui.model.PlaylistModel;
 import mytunes.gui.model.SongModel;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -89,7 +97,7 @@ public class MyTunesController implements Initializable {
 
     public void handleNewSong(ActionEvent actionEvent) throws IOException {
         Parent root1;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mytunes/gui/view/newSong.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MyTunes/gui/view/newSong.fxml"));
         root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
@@ -139,7 +147,7 @@ public class MyTunesController implements Initializable {
 
     public void handleNewPlaylist(ActionEvent actionEvent) throws IOException {
         Parent root2;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/mytunes/gui/view/newPlaylist.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MyTunes/gui/view/newPlaylist.fxml"));
         root2 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root2));
@@ -193,6 +201,10 @@ public class MyTunesController implements Initializable {
         System.out.println(mediaPlayer.getStatus());
     }
 
+    public void mediaPause(){
+        mediaPlayer.pause();
+    }
+
 
 
     public void handleDeleteSongOnPL(ActionEvent actionEvent) {
@@ -204,6 +216,28 @@ public class MyTunesController implements Initializable {
         stage.close();
     }
 
+    public void stopSong(MouseEvent mouseEvent) {
+        if (mediaPlayer == null) {
+            mediaPlayer.stop();
+            lblCurrentSong.setText("No song is playing");
+            mediaPlayer = null;
+        }
+    }
+
+
+
+    public void searchSong(ActionEvent actionEvent) {
+        /*if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
+            tableAllSongs.setItems(songModel.getAllSongs());
+        }
+        else {
+            ObservableList<Songs> songSearcher = songModel.searchSongs(songModel.getAllSongs());
+            tableAllSongs.setItems(songSearcher);
+        }*/
+    }
+
+    public void handleMusicForward(ActionEvent actionEvent) {
+    }
 
 
     public void handleCloseApp() {
@@ -217,18 +251,5 @@ public class MyTunesController implements Initializable {
             mediaPlay();
         }
 
-    }
-
-
-    public void pauseBTn(ActionEvent actionEvent) {
-        if (mediaPlayer == null) {
-            mediaPlayer.stop();
-            lblCurrentSong.setText("No song is playing");
-            mediaPause();
-        }
-    }
-
-    private void mediaPause() {
-        mediaPlayer.pause();
     }
 }
