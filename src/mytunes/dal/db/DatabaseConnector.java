@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
+// Klassen bliver brugt til at lave en forbindesle til databasen
 public class DatabaseConnector {
 
 

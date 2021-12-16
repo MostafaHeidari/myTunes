@@ -3,16 +3,16 @@ package mytunes.gui.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import mytunes.be.NewPlaylist;
+import mytunes.bll.PlaylistManager;
 
 import java.io.IOException;
 
 public class PlaylistModel {
     private ObservableList<mytunes.be.NewPlaylist> AllPlaylists = FXCollections.observableArrayList();
-    private final mytunes.bll.IPlaylistManager playlistManager;
+    private final PlaylistManager playlistManager = new PlaylistManager();
 
 
     public PlaylistModel() throws IOException {
-        playlistManager = (mytunes.bll.IPlaylistManager) new mytunes.bll.PlaylistManager();
     }
     public ObservableList<mytunes.be.NewPlaylist> getAllPlaylists() {
         AllPlaylists = FXCollections.observableArrayList();
@@ -21,10 +21,14 @@ public class PlaylistModel {
     }
 
 
-//getPlaylist
+//metoden bliver brugt til at tilføje en playliste til brugergrænsefladen
     public void addPlaylist(String playlistName) {
         NewPlaylist p = playlistManager.addPlaylist(playlistName); //db
 
-        AllPlaylists.add(p); // brugerflade
+        AllPlaylists.add(p); // brugergrænsefladen
+    }
+// Metoden bliver brugt til at tilføje en sang på en playliste
+    public void addSongToPlaylist(int playlistId, int songId){
+        playlistManager.addSongToPlaylist(playlistId, songId);
     }
 }

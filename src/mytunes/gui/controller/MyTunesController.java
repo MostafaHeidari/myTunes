@@ -88,7 +88,7 @@ public class MyTunesController implements Initializable {
 
     }
 
-
+// Metoden bliver brugt til at indsætte en ny sang ved hjælp af knappen der hedder newsong
     public void handleNewSong(ActionEvent actionEvent) throws IOException {
         Parent root1;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/MyTunes/gui/view/newSong.fxml"));
@@ -101,8 +101,11 @@ public class MyTunesController implements Initializable {
     }
 
 
-
+// Metoden bliver brugt til at flytte en sang over på playlisten ved hjælp af knappen der hedder MoveSongToPL
     public void handleMoveSongToPL(ActionEvent actionEvent) {
+        Songs song = tableAllSongs.getSelectionModel().getSelectedItem();
+        NewPlaylist playlist = tableAllPlaylists.getSelectionModel().getSelectedItem();
+        playlistModel.addSongToPlaylist(playlist.getID(), song.getID());
     }
 
     public void PreviousSong(MouseEvent mouseEvent) {
@@ -117,21 +120,7 @@ public class MyTunesController implements Initializable {
     }
 
 
-    public void NextSong(MouseEvent mouseEvent) {
-        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
-            mediaPlayer.stop();
-            if (currentSongPlaying + 1 == tableAllSongs.getItems().size()) {
-                currentSongPlaying = 0;
-            } else {
-                currentSongPlaying++;
-            }
-            mediaPlay();
-        }
-    }
-
-
-
-    //handleNewPlaylist window
+    //Metoden bliver brugt til at åbne et vindue så man kan tilføje en ny sang
 
     public void handleNewPlaylist(ActionEvent actionEvent) throws IOException {
         Parent root2;

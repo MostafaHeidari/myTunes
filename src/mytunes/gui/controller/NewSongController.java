@@ -49,7 +49,7 @@ public class NewSongController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-
+// Metoden bliver brugt til at man skal kunne tilføje en fill så man kan få en sang ind i programmet
     public void chooseFileMethod(ActionEvent actionEvent) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Song");
@@ -67,18 +67,19 @@ public class NewSongController implements Initializable {
 
     }
 
+    // knappen gør så man kan lukke programmet
 
     private void cancelButtonAction() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
-
+// Metoden gør så man ved hjælp af save kan gemme en sang i programmet
     public void saveSong(ActionEvent actionEvent) {
         String title = titleField.getText();
         String artist = artistField.getText();
         String genre = categoryField.getText();
-        String playtime = timeField.getText();
+        int playtime = Integer.parseInt(timeField.getText());
         String location = urlField.getText();
 
         this.songModel.addSong(title, artist, genre, playtime, location);

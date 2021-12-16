@@ -35,19 +35,20 @@ public class PlaylistController implements Initializable {
         }
     }
 
-    //cancel action
+    //Metoden bliver brugt til at så cancel knappen til at lukke vinduet
     @FXML
     private void cancelButtonAction() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    // metoden bliver brug titl at give info om en redigering af en playliste
     public  void setInfo(NewPlaylist selectedItem){
         isEditing = true;
         nameField.setText(selectedItem.getPlaylistName());
     }
 
-    // savePlaylist
+    // metoden bliver brugt til at gemme en playliste i collenen
     public void savePlaylist(ActionEvent actionEvent) {
             String playlistName = nameGiver.getText();
             this.playlistModel.addPlaylist(playlistName);

@@ -6,7 +6,7 @@ import mytunes.be.Songs;
 import java.util.List;
 
 public interface IDALManager {
-    public Songs addSong(String title, String artist, String genre, String playtime, String location);
+    public Songs addSong(String title, String artist, String genre, int playtime, String location);
 
 
     public boolean deleteSong(Songs songDelete);
@@ -17,4 +17,5 @@ public interface IDALManager {
     NewPlaylist addPlaylist(String playlistName);
 
     public List<NewPlaylist> getPlaylist();
+    public void addSongToPlaylist(int playlistId, int songId);
 }

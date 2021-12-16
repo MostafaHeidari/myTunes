@@ -6,11 +6,12 @@ public class Songs {
     private String artist;
     private String title;
     private String Genre;
-    private String playtime;
+    private int playtime;
     private String location;
     private String Text;
 
-    public Songs(String title, String artist, String genre, String location, String playtime, int id) {
+    // klassen bliver brugt til at oprette en sang og fortælle hvad den skal indeholde
+    public Songs(String title, String artist, String genre, String location, int playtime, int id) {
         this.artist = artist;
         this.title = title;
         this.Genre = genre;
@@ -28,10 +29,7 @@ public class Songs {
     }
 
 
-    public Songs(String title, Object artist, Object category, Object time, int id, String artist1) {
-        ID = id;
-        this.artist = artist1;
-    }
+
 
 
     public String getTitle() {
@@ -58,7 +56,7 @@ public class Songs {
         this.Genre = Genre;
     }
 
-    public String getPlaytime() {
+    public int getPlaytime() {
         return playtime;
     }
 

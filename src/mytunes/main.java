@@ -12,7 +12,7 @@ public class main extends Application {
 private static int width = 800;
 private static int height = 650;
 
-
+// Metoden bliver brugt til at starte programmet og få brugergrænsefladen frem
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("gui/view/myTunes.fxml"));

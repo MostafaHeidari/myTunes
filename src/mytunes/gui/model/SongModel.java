@@ -17,18 +17,18 @@ public class SongModel{
     public SongModel() throws IOException {
         songManager = new SongManager();
     }
-
+// Metoden bliver brugt til at slette og tilføje en sang på listen allSongs
     public ObservableList<Songs>getAllSongs(){
         allSongs.clear();
         allSongs.addAll(songManager.getSongs());
         return allSongs;
     }
-
-    public void addSong(String title,String artist, String genre, String playtime,String location){
+// Metoden bliver brugt til at tilføje en sang i brugergrænsefladen
+    public void addSong(String title,String artist, String genre, int playtime,String location){
         Songs s = songManager.addSong(title,artist,genre,playtime,location); //db
-        allSongs.add(s); // brugerflade
+        allSongs.add(s);
     }
-
+// Metoden bliver brugt til at slette en sang
     public void deleteSong (Songs songDelete){
         boolean succes = songManager.deleteSong(songDelete);
         if(succes==true)

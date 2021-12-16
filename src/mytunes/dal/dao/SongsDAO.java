@@ -15,6 +15,7 @@ public class SongsDAO< AllSongs> {
         con = connection;
     }
 
+    //Den conekter programmet til databasen og får sangene som output
     public List<Songs> getAllsongs() {
         List<Songs> allSongs = new ArrayList<>();
         try{
@@ -28,11 +29,11 @@ public class SongsDAO< AllSongs> {
 
                 String genre = rs.getString("genre");
 
-                String playtime = rs.getString("playtime");
+                int playtime = rs.getInt("playtime");
 
                 String location = rs.getString("location");
 
-                int id = rs.getInt("id");
+                int id = rs.getInt("songid");
                 allSongs.add(new Songs(title,artist , genre, location, playtime, id));
             }
         } catch (SQLException throwable) {
@@ -45,8 +46,8 @@ public class SongsDAO< AllSongs> {
 
 
 
-
-    public Songs addSong(String title, String artist, String genre, String playtime, String location) {
+// Den tilføjer sange til listen over sange
+    public Songs addSong(String title, String artist, String genre, int playtime, String location) {
 
         int insertedId = -1;
         try{
@@ -54,7 +55,7 @@ public class SongsDAO< AllSongs> {
             PreparedStatement statement = con.prepareStatement(sqlStatement, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1,title);
             statement.setString(2,genre);
-            statement.setString(3,playtime);
+            statement.setInt(3,playtime);
             statement.setString(4,artist);
             statement.setString(5,location);
             statement.execute();
@@ -67,7 +68,7 @@ public class SongsDAO< AllSongs> {
         return new Songs(title, artist, genre, location, playtime, insertedId);
     }
 
-
+// Den sletter en sang fra listen med sange
     public boolean deleteSong(Songs songDelete) {
         try{
             String sqlStatement = "DELETE FROM Song WHERE id=?";

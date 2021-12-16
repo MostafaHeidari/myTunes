@@ -3,30 +3,25 @@ package mytunes.bll;
 import mytunes.be.NewPlaylist;
 import mytunes.dal.DALManager;
 import mytunes.dal.IDALManager;
+import mytunes.dal.dao.PlaylistDAO;
 
 import java.io.IOException;
 import java.util.List;
-
+// Klassen bruges til at oprette en playliste
 public class PlaylistManager implements IPlaylistManager {
     private IDALManager dalManager;
 
     public PlaylistManager() throws IOException {
-        dalManager = new mytunes.dal.DALManager();
+        dalManager = new DALManager();
+    }
+
+    public void addSongToPlaylist(int playlistId, int songId){
+        dalManager.addSongToPlaylist(playlistId, songId);
     }
 
     public NewPlaylist addPlaylist(String playlistName) {
         return dalManager.addPlaylist(playlistName);
 
-    }
-
-    @Override
-    public NewPlaylist updatePlaylist(NewPlaylist playlist, String playlistName) {
-        return null;
-    }
-
-    @Override
-    public boolean deletePlaylist(NewPlaylist playlist) {
-        return false;
     }
 
     //getPlaylist

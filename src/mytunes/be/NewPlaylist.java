@@ -7,7 +7,7 @@ public class NewPlaylist {
     private List<Songs> playlist;
     private String playlistName;
     private int ID;
-
+// klassen bliver brugt til at oprette en playliste og fortælle hvad der er på den
     public NewPlaylist(String playlistName, int id){
         this.playlistName = playlistName;
         this.ID = ID;
