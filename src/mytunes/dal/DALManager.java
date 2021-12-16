@@ -1,12 +1,17 @@
-package MyTunes.dal;
+package mytunes.dal;
 
-import MyTunes.be.NewPlaylist;
-import MyTunes.be.Songs;
-import MyTunes.dal.DAO.PlaylistDAO;
-import MyTunes.dal.DAO.SongsDAO;
-import MyTunes.dal.db.DatabaseConnector;
+import mytunes.be.NewPlaylist;
+import mytunes.be.Songs;
+import mytunes.dal.dao.PlaylistDAO;
+import mytunes.dal.dao.SongsDAO;
+import mytunes.dal.db.DatabaseConnector;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import javafx.collections.ObservableList;
+import mytunes.be.NewPlaylist;
+import mytunes.be.Songs;
+import mytunes.dal.IDALManager;
+import mytunes.dal.dao.PlaylistDAO;
+import mytunes.dal.dao.SongsDAO;
+import mytunes.dal.db.DatabaseConnector;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,7 +48,6 @@ public class DALManager implements IDALManager {
     }
 
 
-    @Override
     public Songs addSong(String title, String artist, String genre, String playtime, String location) {
         return songsDAO.addSong(title, artist, genre, playtime, location);
     }
