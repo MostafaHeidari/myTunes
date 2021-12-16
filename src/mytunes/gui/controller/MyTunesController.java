@@ -1,9 +1,5 @@
 package mytunes.gui.controller;
 
-import mytunes.be.NewPlaylist;
-import mytunes.be.Songs;
-import mytunes.gui.model.PlaylistModel;
-import mytunes.gui.model.SongModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +13,10 @@ import javafx.scene.input.SwipeEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
+import mytunes.be.NewPlaylist;
+import mytunes.be.Songs;
+import mytunes.gui.model.PlaylistModel;
+import mytunes.gui.model.SongModel;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,8 +1,8 @@
 package mytunes.bll.util;
 
-import mytunes.be.Songs;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import mytunes.be.Songs;
 
 public class SongFilter {
     private ObservableList<Songs>songSearch = FXCollections.observableArrayList();

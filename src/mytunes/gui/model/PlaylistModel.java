@@ -1,10 +1,8 @@
 package mytunes.gui.model;
 
-import mytunes.bll.IPlaylistManager;
-import mytunes.bll.PlaylistManager;
-import mytunes.be.NewPlaylist;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import mytunes.be.NewPlaylist;
 
 import java.io.IOException;
 

@@ -1,10 +1,10 @@
 package mytunes.bll;
 
+import javafx.collections.ObservableList;
+import mytunes.be.Songs;
 import mytunes.bll.util.SongFilter;
 import mytunes.dal.DALManager;
-import mytunes.be.Songs;
 import mytunes.dal.IDALManager;
-import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.util.List;

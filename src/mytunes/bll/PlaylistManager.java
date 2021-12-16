@@ -1,7 +1,7 @@
 package mytunes.bll;
 
-import mytunes.dal.DALManager;
 import mytunes.be.NewPlaylist;
+import mytunes.dal.DALManager;
 import mytunes.dal.IDALManager;
 
 import java.io.IOException;

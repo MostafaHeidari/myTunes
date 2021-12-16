@@ -1,10 +1,10 @@
 package mytunes.gui.model;
 
-import mytunes.bll.SongManager;
-import mytunes.be.Songs;
-import mytunes.bll.ISongManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import mytunes.be.Songs;
+import mytunes.bll.ISongManager;
+import mytunes.bll.SongManager;
 
 import java.io.IOException;
 

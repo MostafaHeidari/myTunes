@@ -18,9 +18,9 @@ public class SongsDAO< AllSongs> {
     public List<Songs> getAllsongs() {
         List<Songs> allSongs = new ArrayList<>();
         try{
-            String sqlStatment = "SELECT * FROM [Song].[dbo].[Song]";
+            String sqlStatement = "SELECT * FROM [Song].[dbo].[Song]";
             Statement statement = con.createStatement();
-            ResultSet rs = statement.executeQuery(sqlStatment);
+            ResultSet rs = statement.executeQuery(sqlStatement);
             while(rs.next()){
                 String title = rs.getString("title");
 
@@ -35,8 +35,8 @@ public class SongsDAO< AllSongs> {
                 int id = rs.getInt("id");
                 allSongs.add(new Songs(title,artist , genre, location, playtime, id));
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
 
 
@@ -50,8 +50,8 @@ public class SongsDAO< AllSongs> {
 
         int insertedId = -1;
         try{
-            String sqlStatment = "INSERT INTO Song (title,genre,playtime,artist,location) VALUES (?, ?, ?, ?, ?);";
-            PreparedStatement statement = con.prepareStatement(sqlStatment, Statement.RETURN_GENERATED_KEYS);
+            String sqlStatement = "INSERT INTO Song (title,genre,playtime,artist,location) VALUES (?, ?, ?, ?, ?);";
+            PreparedStatement statement = con.prepareStatement(sqlStatement, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1,title);
             statement.setString(2,genre);
             statement.setString(3,playtime);
@@ -64,7 +64,7 @@ public class SongsDAO< AllSongs> {
             } catch (SQLException e) {
             e.printStackTrace();
         }
-        return new Songs(title,artist , genre, location, playtime, insertedId);
+        return new Songs(title, artist, genre, location, playtime, insertedId);
     }
 
     public Songs updateSong(Songs song, String title, String artist, String genre, int playtime, String location) {
@@ -73,8 +73,8 @@ public class SongsDAO< AllSongs> {
 
     public boolean deleteSong(Songs songDelete) {
         try{
-            String sqlStatment = "DELETE FROM Song WHERE id=?";
-            PreparedStatement statement = con.prepareStatement(sqlStatment);
+            String sqlStatement = "DELETE FROM Song WHERE id=?";
+            PreparedStatement statement = con.prepareStatement(sqlStatement);
             statement.setInt(1,songDelete.getID());
             statement.execute();
             return true;

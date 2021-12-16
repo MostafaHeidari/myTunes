@@ -26,8 +26,8 @@ public class PlaylistDAO {
                 int id = rs.getInt("id");
                 allNewPlaylist.add(new NewPlaylist(title, id));
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         return allNewPlaylist;
     }
