@@ -11,7 +11,7 @@ public class PlaylistManager implements IPlaylistManager {
     private IDALManager dalManager;
 
     public PlaylistManager() throws IOException {
-        dalManager = new DALManager();
+        dalManager = new mytunes.dal.DALManager();
     }
 
     public NewPlaylist addPlaylist(String playlistName) {
