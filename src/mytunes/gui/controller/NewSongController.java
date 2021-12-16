@@ -73,9 +73,6 @@ public class NewSongController implements Initializable {
         stage.close();
     }
 
-    public void cancelCliked(MouseEvent mouseEvent) {
-
-    }
 
     public void saveSong(ActionEvent actionEvent) {
         String title = titleField.getText();

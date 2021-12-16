@@ -34,22 +34,16 @@ import java.util.ResourceBundle;
 public class MyTunesController implements Initializable {
     public Label songTextPlaying;
     private TableView<Songs> SongTable;
-    @FXML
-    public Slider volumeSlider;
+
     @FXML
     public Button pauseBtn;
-    @FXML
-    public TextField searchTextField;
-    @FXML
-    public Button btnSearch;
+
     @FXML
     public Label lblCurrentSong;
     @FXML
     public Button btnPlay;
-    @FXML
-    public Button btnForward;
-    @FXML
-    public Button btnBack;
+
+
 
     @FXML
     private javafx.scene.control.Button closeButton;
@@ -71,7 +65,7 @@ public class MyTunesController implements Initializable {
     private int currentSongPlaying = 0;
     private SongModel songModel;
     private PlaylistModel playlistModel;
-    //private final PlaylistModel playlistModel = new PlaylistModel();
+    //private final PlaylistModel = new PlaylistModel();
 
 
     public MyTunesController() throws IOException {
@@ -107,8 +101,6 @@ public class MyTunesController implements Initializable {
     }
 
 
-    public void handleMusicRewind(ActionEvent actionEvent) {
-    }
 
     public void handleMoveSongToPL(ActionEvent actionEvent) {
     }
@@ -137,11 +129,7 @@ public class MyTunesController implements Initializable {
         }
     }
 
-    public void volumeDown(SwipeEvent swipeEvent) {
-    }
 
-    public void volumeUp(SwipeEvent swipeEvent) {
-    }
 
     //handleNewPlaylist window
 
@@ -156,18 +144,6 @@ public class MyTunesController implements Initializable {
         stage.show();
     }
 
-    public void handleDeletePlaylist(ActionEvent actionEvent) {
-    }
-
-
-    public void handleEditPlaylist(ActionEvent actionEvent) {
-    }
-
-    public void handleMoveSongUp(ActionEvent actionEvent) {
-    }
-
-    public void handleMoveSongDown(ActionEvent actionEvent) {
-    }
 
 
     public void handleDeleteSong(ActionEvent actionEvent) {
@@ -176,11 +152,7 @@ public class MyTunesController implements Initializable {
         }
     }
 
-    public void handleEditSong(ActionEvent actionEvent) {
-    }
 
-    public void handleMusicPlayPause(ActionEvent actionEvent) {
-    }
 
     // new mediaPlay
     public void mediaPlay() {
@@ -224,20 +196,6 @@ public class MyTunesController implements Initializable {
         }
     }
 
-
-
-    public void searchSong(ActionEvent actionEvent) {
-        /*if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
-            tableAllSongs.setItems(songModel.getAllSongs());
-        }
-        else {
-            ObservableList<Songs> songSearcher = songModel.searchSongs(songModel.getAllSongs());
-            tableAllSongs.setItems(songSearcher);
-        }*/
-    }
-
-    public void handleMusicForward(ActionEvent actionEvent) {
-    }
 
 
     public void handleCloseApp() {

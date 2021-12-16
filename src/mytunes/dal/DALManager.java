@@ -52,10 +52,6 @@ public class DALManager implements IDALManager {
         return songsDAO.addSong(title, artist, genre, playtime, location);
     }
 
-    @Override
-    public Songs updateSong(Songs song, String title, String artist, String genre, String playtime, String location) {
-        return null;
-    }
 
     @Override
     public boolean deleteSong(Songs songDelete) {

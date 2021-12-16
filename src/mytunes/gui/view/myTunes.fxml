@@ -42,11 +42,9 @@
       </Label>
 
       <Button fx:id="newPlaylist" layoutX="45.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleNewPlaylist" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="New" />
-      <Button layoutX="170.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleDeletePlaylist" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
       <Button fx:id="closeButton" layoutX="702.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleCloseApp" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #C5EDFF;" text="Close" />
       <Button fx:id="newSong" layoutX="455.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleNewSong" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="New" />
       <Button fx:id="DeleteSong" layoutX="580.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleDeleteSong" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
-      <Button fx:id="musicPlayPause" layoutX="92.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleMusicPlayPause" style="-fx-background-color: none;" />
       <Button fx:id="btnPlay" layoutX="136.0" layoutY="15.0" mnemonicParsing="false" onAction="#handlePlay" prefHeight="47.0" prefWidth="50.0" text="▶">
          <font>
             <Font size="17.0" />

@@ -20,13 +20,6 @@ public class PlaylistModel {
         return AllPlaylists;
     }
 
-  /* public ObservableList<NewPlaylist> getAllPlaylists() {
-        AllPlaylists.clear();
-        AllPlaylists.addAll(playlistManager.getPlaylist());
-        return AllPlaylists;
-    }
-
-   */
 
 //getPlaylist
     public void addPlaylist(String playlistName) {

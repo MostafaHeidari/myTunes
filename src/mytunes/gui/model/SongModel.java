@@ -35,12 +35,7 @@ public class SongModel{
             allSongs.remove(songDelete);
     }
 
-    public void updateSong(Songs songDelete, String title, String artist, String genre, String playtime, String location){
-       songManager.updateSong(songDelete, title, artist,genre,playtime,location);
-    }
 
 
-    public ObservableList<Songs> searchSongs(ObservableList<Songs> songs, String text ){
-        return songManager.searchSongs(songs,text);
-    }
+
 }

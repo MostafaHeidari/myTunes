@@ -67,9 +67,6 @@ public class SongsDAO< AllSongs> {
         return new Songs(title, artist, genre, location, playtime, insertedId);
     }
 
-    public Songs updateSong(Songs song, String title, String artist, String genre, int playtime, String location) {
-        return song;
-    }
 
     public boolean deleteSong(Songs songDelete) {
         try{
@@ -84,7 +81,5 @@ public class SongsDAO< AllSongs> {
         return false;
     }
 
-    public Songs getSongById(int id) {
-        return null;
-    }
+
 }
