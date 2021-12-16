@@ -9,14 +9,14 @@ import javafx.collections.ObservableList;
 import java.io.IOException;
 
 public class PlaylistModel {
-    private ObservableList<NewPlaylist> AllPlaylists = FXCollections.observableArrayList();
-    private final IPlaylistManager playlistManager;
+    private ObservableList<mytunes.be.NewPlaylist> AllPlaylists = FXCollections.observableArrayList();
+    private final mytunes.bll.IPlaylistManager playlistManager;
 
 
     public PlaylistModel() throws IOException {
-        playlistManager = new PlaylistManager();
+        playlistManager = (mytunes.bll.IPlaylistManager) new mytunes.bll.PlaylistManager();
     }
-    public ObservableList<NewPlaylist> getAllPlaylists() {
+    public ObservableList<mytunes.be.NewPlaylist> getAllPlaylists() {
         AllPlaylists = FXCollections.observableArrayList();
         AllPlaylists.addAll(playlistManager.getPlaylist());
         return AllPlaylists;
