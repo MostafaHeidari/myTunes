@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MyTunesController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MyTunesController">
    <children>
       <TableView fx:id="tableAllPlaylists" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
@@ -44,14 +48,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Button fx:id="musicRewind" layoutX="60.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleMusicRewind" style="-fx-background-color: #E9FAFB;" AnchorPane.topAnchor="33.0" />
-      <Button fx:id="musicForward" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleMusicForward" style="-fx-background-color: #E9FAFB;" />
-      <Slider fx:id="VolumeSlider" layoutX="77.0" layoutY="71.0" prefHeight="14.0" prefWidth="124.0" style="-fx-background-color: #C5EDFF;" />
-      <ImageView fitHeight="18.0" fitWidth="26.0" layoutX="53.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/icons8-speaker-128.png" />
-         </image>
-      </ImageView>
+
       <Button fx:id="newPlaylist" layoutX="45.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleNewPlaylist" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="New" />
       <Button layoutX="170.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleDeletePlaylist" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Delete" />
       <Button layoutX="106.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleEditPlaylist" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #C5EDFF;" text="Edit" />
@@ -71,7 +68,7 @@
       </Button>
       <Button layoutX="39.0" layoutY="26.0" mnemonicParsing="false" text="⬅" />
       <Button layoutX="195.0" layoutY="27.0" mnemonicParsing="false" text="➡" />
-      <Button fx:id="btnStop" layoutX="75.0" layoutY="15.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="50.0" text="⏹" />
+      <Button fx:id="pauseBtn" layoutX="75.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseBTn" prefHeight="47.0" prefWidth="50.0" text="⏹" />
       <Label fx:id="songTextPlaying" layoutX="244.0" layoutY="31.0" text="Label" />
    </children>
 </AnchorPane>

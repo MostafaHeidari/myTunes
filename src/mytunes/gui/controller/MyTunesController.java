@@ -29,7 +29,7 @@ public class MyTunesController implements Initializable {
     @FXML
     public Slider volumeSlider;
     @FXML
-    public Button btnStop;
+    public Button pauseBtn;
     @FXML
     public TextField searchTextField;
     @FXML
@@ -204,28 +204,6 @@ public class MyTunesController implements Initializable {
         stage.close();
     }
 
-    public void stopSong(MouseEvent mouseEvent) {
-        if (mediaPlayer == null) {
-            mediaPlayer.stop();
-            lblCurrentSong.setText("No song is playing");
-            mediaPlayer = null;
-        }
-    }
-
-
-
-    public void searchSong(ActionEvent actionEvent) {
-        /*if (SearchTextField.getText() == null || SearchTextField.getText().length() <= 0){
-            tableAllSongs.setItems(songModel.getAllSongs());
-        }
-        else {
-            ObservableList<Songs> songSearcher = songModel.searchSongs(songModel.getAllSongs());
-            tableAllSongs.setItems(songSearcher);
-        }*/
-    }
-
-    public void handleMusicForward(ActionEvent actionEvent) {
-    }
 
 
     public void handleCloseApp() {
@@ -239,5 +217,18 @@ public class MyTunesController implements Initializable {
             mediaPlay();
         }
 
+    }
+
+
+    public void pauseBTn(ActionEvent actionEvent) {
+        if (mediaPlayer == null) {
+            mediaPlayer.stop();
+            lblCurrentSong.setText("No song is playing");
+            mediaPause();
+        }
+    }
+
+    private void mediaPause() {
+        mediaPlayer.pause();
     }
 }
