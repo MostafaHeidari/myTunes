@@ -89,6 +89,7 @@ public class PlaylistDAO {
             preparedStatement.setInt(1, playlistId);
             preparedStatement.setInt(2, songId);
             preparedStatement.execute();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

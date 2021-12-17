@@ -33,6 +33,7 @@ import java.util.ResourceBundle;
 
 public class MyTunesController implements Initializable {
     public Label songTextPlaying;
+    public TableView songsInPlaylistTable;
     private TableView<Songs> SongTable;
 
     @FXML
@@ -85,6 +86,8 @@ public class MyTunesController implements Initializable {
         //playlist
         playlistName.setCellValueFactory(new PropertyValueFactory<>("playlistName"));
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
+// indlæs den valgte playliste
+       // songsInPlaylistTable.setItems(playlistModel.addSongToPlaylist());
 
     }
 
@@ -106,17 +109,6 @@ public class MyTunesController implements Initializable {
         Songs song = tableAllSongs.getSelectionModel().getSelectedItem();
         NewPlaylist playlist = tableAllPlaylists.getSelectionModel().getSelectedItem();
         playlistModel.addSongToPlaylist(playlist.getID(), song.getID());
-    }
-
-    public void PreviousSong(MouseEvent mouseEvent) {
-        if (tableAllSongs.getSelectionModel().getSelectedIndex() != -1) {
-            if (currentSongPlaying - 1 == -1) {
-                currentSongPlaying = 0;
-            } else {
-                currentSongPlaying--;
-            }
-            mediaPlay();
-        }
     }
 
 
@@ -167,9 +159,6 @@ public class MyTunesController implements Initializable {
     }
 
 
-
-    public void handleDeleteSongOnPL(ActionEvent actionEvent) {
-    }
 
     @FXML
     public void closeButton(MouseEvent mouseEvent) {

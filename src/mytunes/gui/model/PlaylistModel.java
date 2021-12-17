@@ -31,4 +31,12 @@ public class PlaylistModel {
     public void addSongToPlaylist(int playlistId, int songId){
         playlistManager.addSongToPlaylist(playlistId, songId);
     }
+
+    public ObservableList addSongToPlaylist() {
+        addSongToPlaylist().clear();
+        addSongToPlaylist().addAll(playlistManager.getPlaylist().toArray(new NewPlaylist[0]));
+        return addSongToPlaylist();
+
+
+    }
 }

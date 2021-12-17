@@ -1,6 +1,7 @@
 package mytunes.bll;
 
 import mytunes.be.NewPlaylist;
+import mytunes.be.Songs;
 import mytunes.dal.DALManager;
 import mytunes.dal.IDALManager;
 import mytunes.dal.dao.PlaylistDAO;
@@ -15,14 +16,18 @@ public class PlaylistManager implements IPlaylistManager {
         dalManager = new DALManager();
     }
 
-    public void addSongToPlaylist(int playlistId, int songId){
-        dalManager.addSongToPlaylist(playlistId, songId);
-    }
+
 
     public NewPlaylist addPlaylist(String playlistName) {
         return dalManager.addPlaylist(playlistName);
 
     }
+
+    @Override
+    public void addSongToPlaylist(int playlistId, int songId) {
+        dalManager.addSongToPlaylist(playlistId, songId);
+    }
+
 
     //getPlaylist
     @Override
@@ -30,4 +35,6 @@ public class PlaylistManager implements IPlaylistManager {
         List<NewPlaylist> AllPlaylists = dalManager.getPlaylist();
         return AllPlaylists;
     }
+
+
 }

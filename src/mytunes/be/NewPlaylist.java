@@ -10,9 +10,7 @@ public class NewPlaylist {
 // klassen bliver brugt til at oprette en playliste og fortælle hvad der er på den
     public NewPlaylist(String playlistName, int id){
         this.playlistName = playlistName;
-        this.ID = ID;
-
-        setplaylistName(playlistName);
+        this.ID = id;
     }
 
     public List<Songs>getPlaylist(){
@@ -36,8 +34,8 @@ public class NewPlaylist {
         return ID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        this.ID = id;
     }
 
 }
