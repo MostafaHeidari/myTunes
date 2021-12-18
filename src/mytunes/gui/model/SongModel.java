@@ -13,7 +13,6 @@ public class SongModel{
     private final ObservableList<Songs> allSongs= FXCollections.observableArrayList();
     private final ISongManager songManager;
 
-
     public SongModel() throws IOException {
         songManager = new SongManager();
     }
@@ -34,8 +33,5 @@ public class SongModel{
         if(succes==true)
             allSongs.remove(songDelete);
     }
-
-
-
 
 }

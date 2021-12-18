@@ -23,11 +23,6 @@ public class PlaylistManager implements IPlaylistManager {
 
     }
 
-    @Override
-    public void addSongToPlaylist(int playlistId, int songId) {
-        dalManager.addSongToPlaylist(playlistId, songId);
-    }
-
 
     //getPlaylist
     @Override

@@ -3,28 +3,24 @@ package mytunes.dal.dao;
 import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
 import mytunes.be.SongsInPlaylist;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SongsInPlaylistDAO {
-
-
     private Connection con;
-
     public SongsInPlaylistDAO (Connection connection) {
         con = connection;
-
     }
 
     //Den finder sangene i databasen og så får programmet dem som output
-    public List<Songs> getAllPlaylistSongs(int playlistId) throws SQLException{
-        ArrayList<Songs> allSongs = new ArrayList<>();
+    public List<SongsInPlaylist> getAllPlaylistSongs(int playlistId, int songId) throws SQLException{
+        ArrayList<SongsInPlaylist> allPlaylistSongs = new ArrayList<>();
         try{
             String sql = "SELECT * FROM Song INNER JOIN SongsInPlaylist ON SongsInPlaylist.SongId = Song.id where SongsInPlaylist.PlaylistId = ?;";
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, playlistId);
+            preparedStatement.setInt(1,songId);
             if (preparedStatement.execute()){
                 ResultSet resultSet = preparedStatement.getResultSet();
                 while(resultSet.next()){
@@ -35,15 +31,13 @@ public class SongsInPlaylistDAO {
                     String artistName = resultSet.getString("artistName");
                     String location = resultSet.getString("location");
                     Songs song = new Songs(title, artistName, genre, location, playTime, id);
-                    allSongs.add(song);
+                    allPlaylistSongs.add(new SongsInPlaylist(playlistId, songId));
                 }
-
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-
         }
-        return allSongs;
+        return allPlaylistSongs;
     }
 
     // Metoden tilføjer sange til playlisten
@@ -52,6 +46,7 @@ public class SongsInPlaylistDAO {
             String sql = "INSERT INTO SongsInPlaylist(PlaylistID, SongID) VALUES (?,?);";
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, playlistId);
+            preparedStatement.setInt(1, songId);
             preparedStatement.execute();
 
         } catch (SQLException throwables) {

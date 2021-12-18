@@ -26,7 +26,7 @@ public class NewPlaylist {
         return playlistName;
     }
 
-    public void setplaylistName(String playlistName) {
+    public void setPlaylistName(String playlistName) {
         this.playlistName = playlistName;
     }
 

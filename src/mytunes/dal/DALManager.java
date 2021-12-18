@@ -64,12 +64,14 @@ public class DALManager implements IDALManager {
     public List<Songs> getSongs() {
         return songsDAO.getAllsongs();
     }
-    public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId){
-        SongsInPlaylistDAO.addSongToPlaylist(playlistId, songId);
-        return null;
+
+    public SongsInPlaylist addSongToPlaylist(int playlistID, int songID){
+        return SongsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
+    }
+    public List<SongsInPlaylist> getSongsInPlaylist() {
+        return songsInPlaylistDAO.getAllPlaylistSongs();
     }
 
-    public SongsInPlaylist addSongsPlaylist(int playlistId, int songId){
-        return SongsInPlaylistDAO.addSongToPlaylist;
-    }
+
+
 }

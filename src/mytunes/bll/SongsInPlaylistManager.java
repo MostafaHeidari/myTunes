@@ -1,6 +1,7 @@
 package mytunes.bll;
 
 import javafx.collections.FXCollections;
+import mytunes.be.NewPlaylist;
 import mytunes.be.SongsInPlaylist;
 import mytunes.dal.DALManager;
 import mytunes.dal.IDALManager;
@@ -16,15 +17,14 @@ public class SongsInPlaylistManager {
         dalManager = new DALManager();
     }
 
-    public Collection<Object> AllSongsOnPlaylist() {
 
+    public List<SongsInPlaylist> getSongsInPlaylist() {
+        List<SongsInPlaylist> allPlaylistSongs = dalManager.getSongsInPlaylist();
+        return allPlaylistSongs;
     }
 
-    public List<SongsInPlaylist> getSongsInPlaylist(){
-    List<SongsInPlaylist> AllSongsOnPlaylist = dalManager.;
+    public SongsInPlaylist addSongToPlaylist(int playlistId, int songId) {
+        return dalManager.addSongToPlaylist(playlistId,songId);
     }
 
-    public static SongsInPlaylist addSongToPlaylist(int playlistId, int songId) {
-       return dalManager.addSongPlaylist(playlistId, songId);
-    }
 }
