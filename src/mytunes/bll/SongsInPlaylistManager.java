@@ -18,13 +18,13 @@ public class SongsInPlaylistManager {
     }
 
 
-    public List<SongsInPlaylist> getSongsInPlaylist() {
-        List<SongsInPlaylist> allPlaylistSongs = dalManager.getSongsInPlaylist();
+    public SongsInPlaylist getSongsInPlaylist() {
+        SongsInPlaylist allPlaylistSongs = dalManager.getSongsInPlaylist();
         return allPlaylistSongs;
     }
 
     public SongsInPlaylist addSongToPlaylist(int playlistId, int songId) {
-        return dalManager.addSongToPlaylist(playlistId,songId);
+        return (SongsInPlaylist) dalManager.addSongToPlaylist(playlistId,songId);
     }
 
 }

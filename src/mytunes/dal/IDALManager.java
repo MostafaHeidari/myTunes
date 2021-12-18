@@ -20,5 +20,5 @@ public interface IDALManager {
     public List<NewPlaylist> getPlaylist();
     public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId);
 
-    List<SongsInPlaylist> getSongsInPlaylist();
+    SongsInPlaylist getSongsInPlaylist();
 }

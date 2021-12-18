@@ -10,6 +10,7 @@ import mytunes.dal.db.DatabaseConnector;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class DALManager implements IDALManager {
@@ -66,10 +67,10 @@ public class DALManager implements IDALManager {
     }
 
     public SongsInPlaylist addSongToPlaylist(int playlistID, int songID){
-        return SongsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
+        return  SongsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
     }
-    public List<SongsInPlaylist> getSongsInPlaylist() {
-        return songsInPlaylistDAO.getAllPlaylistSongs();
+    public SongsInPlaylist getSongsInPlaylist()  {
+        return songsInPlaylistDAO.getAllPlaylistSongs(1,2);
     }
 
 
