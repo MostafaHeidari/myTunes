@@ -2,6 +2,7 @@ package mytunes.dal;
 
 import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
+import mytunes.be.SongsInPlaylist;
 
 import java.util.List;
 
@@ -17,5 +18,5 @@ public interface IDALManager {
     NewPlaylist addPlaylist(String playlistName);
 
     public List<NewPlaylist> getPlaylist();
-    public void addSongToPlaylist(int playlistId, int songId);
+    public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId);
 }

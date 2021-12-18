@@ -27,16 +27,7 @@ public class PlaylistModel {
 
         AllPlaylists.add(p); // brugergrænsefladen
     }
-// Metoden bliver brugt til at tilføje en sang på en playliste
-    public void addSongToPlaylist(int playlistId, int songId){
-        playlistManager.addSongToPlaylist(playlistId, songId);
-    }
-
-    public ObservableList addSongToPlaylist() {
-        addSongToPlaylist().clear();
-        addSongToPlaylist().addAll(playlistManager.getPlaylist().toArray(new NewPlaylist[0]));
-        return addSongToPlaylist();
 
 
-    }
+
 }

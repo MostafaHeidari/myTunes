@@ -2,8 +2,10 @@ package mytunes.dal;
 
 import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
+import mytunes.be.SongsInPlaylist;
 import mytunes.dal.dao.PlaylistDAO;
 import mytunes.dal.dao.SongsDAO;
+import mytunes.dal.dao.SongsInPlaylistDAO;
 import mytunes.dal.db.DatabaseConnector;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
@@ -16,6 +18,7 @@ public class DALManager implements IDALManager {
     private DatabaseConnector connector;
 
     private PlaylistDAO playlistDAO;
+    private SongsInPlaylistDAO songsInPlaylistDAO;
 
     // Den her metode før så databasen bliver coneketet med dao'erne
     public DALManager() {
@@ -24,6 +27,7 @@ public class DALManager implements IDALManager {
             connector = new DatabaseConnector();
             songsDAO = new SongsDAO(connector.getConnection());
             playlistDAO = new PlaylistDAO(connector.getConnection());
+            songsInPlaylistDAO = new SongsInPlaylistDAO(connector.getConnection());
 
 
         } catch (IOException e) {
@@ -60,7 +64,12 @@ public class DALManager implements IDALManager {
     public List<Songs> getSongs() {
         return songsDAO.getAllsongs();
     }
-    public void addSongToPlaylist(int playlistId, int songId){
-        playlistDAO.addSongToPlaylist(playlistId, songId);
+    public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId){
+        SongsInPlaylistDAO.addSongToPlaylist(playlistId, songId);
+        return null;
+    }
+
+    public SongsInPlaylist addSongsPlaylist(int playlistId, int songId){
+        return SongsInPlaylistDAO.addSongToPlaylist;
     }
 }

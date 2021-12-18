@@ -2,8 +2,7 @@ package mytunes.gui.controller;
 
 import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
-import mytunes.gui.model.PlaylistModel;
-import mytunes.gui.model.SongModel;
+import mytunes.gui.model.*;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,6 +71,7 @@ public class MyTunesController implements Initializable {
     public MyTunesController() throws IOException {
         songModel = new SongModel();
         playlistModel = new PlaylistModel();
+        songsInPlaylistModel = new SongsInPlaylistModel;
     }
 
 
@@ -87,7 +87,8 @@ public class MyTunesController implements Initializable {
         playlistName.setCellValueFactory(new PropertyValueFactory<>("playlistName"));
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
 // indlæs den valgte playliste
-       // songsInPlaylistTable.setItems(playlistModel.addSongToPlaylist());
+
+      // songsInPlaylistTable.setItems(playlistModel.addSongToPlaylist());
 
     }
 
@@ -108,7 +109,7 @@ public class MyTunesController implements Initializable {
     public void handleMoveSongToPL(ActionEvent actionEvent) {
         Songs song = tableAllSongs.getSelectionModel().getSelectedItem();
         NewPlaylist playlist = tableAllPlaylists.getSelectionModel().getSelectedItem();
-        playlistModel.addSongToPlaylist(playlist.getID(), song.getID());
+        SongsInPlaylistModel.addSongToPlaylist(playlist.getID(), song.getID());
     }
 
 
