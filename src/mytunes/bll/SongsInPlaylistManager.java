@@ -7,6 +7,7 @@ import mytunes.dal.DALManager;
 import mytunes.dal.IDALManager;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class SongsInPlaylistManager {
     }
 
 
-    public SongsInPlaylist getSongsInPlaylist() {
+    public SongsInPlaylist getSongsInPlaylist() throws SQLException {
         SongsInPlaylist allPlaylistSongs = dalManager.getSongsInPlaylist();
         return allPlaylistSongs;
     }

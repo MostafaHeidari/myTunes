@@ -69,7 +69,7 @@ public class DALManager implements IDALManager {
     public SongsInPlaylist addSongToPlaylist(int playlistID, int songID){
         return  SongsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
     }
-    public SongsInPlaylist getSongsInPlaylist()  {
+    public SongsInPlaylist getSongsInPlaylist() throws SQLException {
         return songsInPlaylistDAO.getAllPlaylistSongs(1,2);
     }
 

@@ -4,6 +4,7 @@ import mytunes.be.NewPlaylist;
 import mytunes.be.Songs;
 import mytunes.be.SongsInPlaylist;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IDALManager {
@@ -20,5 +21,5 @@ public interface IDALManager {
     public List<NewPlaylist> getPlaylist();
     public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId);
 
-    SongsInPlaylist getSongsInPlaylist();
+    SongsInPlaylist getSongsInPlaylist() throws SQLException;
 }
