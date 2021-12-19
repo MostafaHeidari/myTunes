@@ -14,24 +14,29 @@ public class SongsInPlaylistDAO {
     }
 
     //Den finder sangene i databasen og så får programmet dem som output
-    public List<SongsInPlaylist> getAllPlaylistSongs(int playlistId, int songId) throws SQLException{
-        ArrayList<SongsInPlaylist> allPlaylistSongs = new ArrayList<>();
+    public List<Songs> getAllPlaylistSongs(int playlistId) throws SQLException{
+        ArrayList<Songs> allPlaylistSongs = new ArrayList<>();
         try{
-            String sql = "SELECT * FROM Song INNER JOIN SongsInPlaylist ON SongsInPlaylist.SongId = Song.id where SongsInPlaylist.PlaylistId = ?;";
+            String sql = "SELECT * FROM Song INNER JOIN SongsInPlaylist ON SongsInPlaylist.SongId = Song.songid where SongsInPlaylist.PlaylistId = ?;";
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, playlistId);
-            preparedStatement.setInt(1,songId);
             if (preparedStatement.execute()){
                 ResultSet resultSet = preparedStatement.getResultSet();
                 while(resultSet.next()){
-                    int id = resultSet.getInt("songid");
                     String title = resultSet.getString("title");
+
+                    String artist = resultSet.getString("artist");
+
                     String genre = resultSet.getString("genre");
-                    int playTime = resultSet.getInt("playTime");
-                    String artistName = resultSet.getString("artistName");
+
+                    int playtime = resultSet.getInt("playtime");
+
                     String location = resultSet.getString("location");
-                    Songs song = new Songs(title, artistName, genre, location, playTime, id);
-                    allPlaylistSongs.add(new SongsInPlaylist(playlistId, songId));
+
+                    int id = resultSet.getInt("songid");
+
+                    Songs song = new Songs(title, artist, genre, location, playtime, id);
+                    allPlaylistSongs.add(song);
                 }
             }
         } catch (SQLException throwables) {
@@ -41,18 +46,17 @@ public class SongsInPlaylistDAO {
     }
 
     // Metoden tilføjer sange til playlisten
-    public SongsInPlaylist addSongToPlaylist(int playlistId, int songId){
+    public void addSongToPlaylist(int playlistId, int songId){
         try{
             String sql = "INSERT INTO SongsInPlaylist(PlaylistID, SongID) VALUES (?,?);";
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, playlistId);
-            preparedStatement.setInt(1, songId);
+            preparedStatement.setInt(2, songId);
             preparedStatement.execute();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        SongsInPlaylist songsInPlaylist = new SongsInPlaylist(1, 1);
-        return songsInPlaylist;    }
+    }
 
 }

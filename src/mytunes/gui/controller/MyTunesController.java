@@ -1,5 +1,6 @@
 package mytunes.gui.controller;
 
+import javafx.collections.FXCollections;
 import mytunes.be.*;
 import mytunes.gui.model.*;
 import javafx.collections.ObservableList;
@@ -31,7 +32,7 @@ import java.util.ResourceBundle;
 
 public class MyTunesController implements Initializable {
     public Label songTextPlaying;
-    public TableView <SongsInPlaylist>songsInPlaylistTable;
+    public TableView <Songs>songsInPlaylistTable;
     public TableColumn songName;
     private TableView<Songs> SongTable;
 
@@ -64,14 +65,12 @@ public class MyTunesController implements Initializable {
     private int currentSongPlaying = 0;
     private SongModel songModel;
     private PlaylistModel playlistModel;
-    private SongsInPlaylistModel songsInPlaylistModel;
     //private final PlaylistModel = new PlaylistModel();
 
 
     public MyTunesController() throws IOException {
         songModel = new SongModel();
         playlistModel = new PlaylistModel();
-        songsInPlaylistModel = new SongsInPlaylistModel();
     }
 
 
@@ -88,8 +87,7 @@ public class MyTunesController implements Initializable {
         tableAllPlaylists.setItems(playlistModel.getAllPlaylists());
 // indlæs den valgte playliste
 
-        songName.setCellValueFactory(new PropertyValueFactory<>("songName"));
-        songsInPlaylistTable.setItems(SongsInPlaylistModel.allSongsOnPlaylist());
+        songName.setCellValueFactory(new PropertyValueFactory<>("title"));
 
     }
 
@@ -110,7 +108,11 @@ public class MyTunesController implements Initializable {
     public void handleMoveSongToPL(ActionEvent actionEvent) {
         Songs song = tableAllSongs.getSelectionModel().getSelectedItem();
         NewPlaylist playlist = tableAllPlaylists.getSelectionModel().getSelectedItem();
-        SongsInPlaylist songsPlaylist = songsInPlaylistTable.getSelectionModel().getSelectedItem();
+        playlistModel.addSongToPlaylist(playlist, song);
+
+        tableAllPlaylists.refresh();
+        songsInPlaylistTable.getItems().clear();
+        songsInPlaylistTable.setItems(FXCollections.observableArrayList(tableAllPlaylists.getSelectionModel().getSelectedItem().getPlaylist()));
     }
 
 
@@ -185,5 +187,10 @@ public class MyTunesController implements Initializable {
             mediaPlay();
         }
 
+    }
+
+    public void displaySongsInPlaylist(MouseEvent mouseEvent) {
+        NewPlaylist playlistSelect = tableAllPlaylists.getSelectionModel().getSelectedItem();
+        songsInPlaylistTable.setItems(FXCollections.observableArrayList(playlistSelect.getPlaylist()));
     }
 }

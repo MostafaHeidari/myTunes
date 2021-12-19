@@ -1,7 +1,5 @@
 package mytunes.be;
 
-import mytunes.gui.model.SongsInPlaylistModel;
-
 public class SongsInPlaylist {
     private int playlistId;
     private int songId;

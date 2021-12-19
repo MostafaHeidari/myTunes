@@ -31,5 +31,10 @@ public class PlaylistManager implements IPlaylistManager {
         return AllPlaylists;
     }
 
+    @Override
+    public void addSongToPlaylist(NewPlaylist playlistToAdd, Songs songToAdd) {
+        dalManager.addSongToPlaylist(playlistToAdd.getID(), songToAdd.getID());
+    }
+
 
 }

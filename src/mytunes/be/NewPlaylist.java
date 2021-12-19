@@ -1,10 +1,11 @@
 package mytunes.be;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NewPlaylist {
 
-    private List<Songs> playlist;
+    private List<Songs> playlist = new ArrayList<>();
     private String playlistName;
     private int ID;
 // klassen bliver brugt til at oprette en playliste og fortælle hvad der er på den
@@ -19,6 +20,10 @@ public class NewPlaylist {
 
     public void setPlaylist(List<Songs> playlist) {
         this.playlist = playlist;
+    }
+
+    public void addToPlaylist(Songs songToAdd){
+        this.playlist.add(songToAdd);
     }
 
     public String getPlaylistName()

@@ -16,10 +16,10 @@ public interface IDALManager {
 
     public List<Songs> getSongs();
 
-    NewPlaylist addPlaylist(String playlistName);
+    public NewPlaylist addPlaylist(String playlistName);
 
     public List<NewPlaylist> getPlaylist();
-    public List<SongsInPlaylist> addSongToPlaylist(int playlistId, int songId);
 
-    SongsInPlaylist getSongsInPlaylist() throws SQLException;
+    public void addSongToPlaylist(int playlistId, int songId);
+
 }

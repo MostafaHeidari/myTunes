@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MyTunesController">
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #E9FAFB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mytunes.gui.controller.MyTunesController">
    <children>
-      <TableView fx:id="tableAllPlaylists" layoutX="41.0" layoutY="138.0" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
+      <TableView fx:id="tableAllPlaylists" layoutX="41.0" layoutY="138.0" onMouseClicked="#displaySongsInPlaylist" prefHeight="342.0" prefWidth="180.0" AnchorPane.leftAnchor="41.0">
         <columns>
           <TableColumn fx:id="playlistName" prefWidth="179.20001220703125" text="Name" />
         </columns>

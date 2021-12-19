@@ -66,13 +66,9 @@ public class DALManager implements IDALManager {
         return songsDAO.getAllsongs();
     }
 
-    public SongsInPlaylist addSongToPlaylist(int playlistID, int songID){
-        return  SongsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
+    public void addSongToPlaylist(int playlistID, int songID){
+        songsInPlaylistDAO.addSongToPlaylist(playlistID, songID);
     }
-    public SongsInPlaylist getSongsInPlaylist() throws SQLException {
-        return songsInPlaylistDAO.getAllPlaylistSongs(1,2);
-    }
-
 
 
 }
